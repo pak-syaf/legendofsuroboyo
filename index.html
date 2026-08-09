@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Worksheet (LKM) — Suro and Boyo Modern Story Writing</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            maroon: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              600: '#e11d48',
+              800: '#800000',
+              900: '#580000',
+            },
+            amberGold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    
+    .card-box {
+      transition: all 0.2s ease-in-out;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+      .card-box {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        break-inside: avoid;
+        margin-bottom: 1rem !important;
+      }
+      input, textarea, select {
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        resize: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+
+  <!-- TOP HEADER / BRANDING -->
+  <header class="bg-maroon-800 text-white shadow-md border-b-4 border-amberGold-500">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">
+          <span>STKIP Al Hikmah Surabaya</span>
+          <span>•</span>
+          <span>English Education Program</span>
+        </div>
+        <h1 class="text-xl md:text-2xl font-extrabold tracking-tight">Basic Written English (Code: KK0211302)</h1>
+        <p class="text-xs md:text-sm text-slate-200 mt-0.5">Microlearning-AI Model: The Legend of Suro and Boyo — Modern Story Writing</p>
+      </div>
+
+      <!-- Quick Actions / Export Buttons -->
+      <div class="no-print flex items-center gap-2 flex-wrap sm:flex-nowrap">
+        <button onclick="saveProgress()" class="bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3 py-2 rounded-lg border border-white/20 transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+          Save Progress
+        </button>
+        <button onclick="exportToWord()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-2 rounded-lg transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          Download Word (.doc)
+        </button>
+        <button onclick="window.print()" class="bg-amberGold-500 hover:bg-amberGold-600 text-slate-900 text-xs font-bold px-3 py-2 rounded-lg transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          Save PDF / Print
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-5xl mx-auto px-4 mt-6">
+
+    <!-- Toast Notification Box -->
+    <div id="toast" class="no-print fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-lg shadow-xl text-xs font-medium hidden z-50 items-center gap-2 border border-slate-700">
+      <span id="toast-icon">✅</span>
+      <span id="toast-msg">Progress saved successfully!</span>
+    </div>
+
+    <!-- STUDENT METADATA CARD -->
+    <section class="card-box bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Student Identity & Session Info</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Student Name</label>
+          <input type="text" id="std_name" placeholder="Full Name" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Student ID (NIM)</label>
+          <input type="text" id="std_id" placeholder="e.g., 202401009" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Class / Session</label>
+          <input type="text" id="std_class" placeholder="e.g., Class 2026A" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Date</label>
+          <input type="date" id="std_date" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 0: CHOOSE FEEDBACK MODE -->
+    <section class="card-box bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">0</span>
+          STEP 0 — CHOOSE YOUR FEEDBACK MODE
+        </h3>
+        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded font-medium">Mitigation Scenario</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-4">
+        Select your learning scenario today. If AI servers or internet connections are down, switch to Peer or Offline Card mode without losing points!
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <!-- Option A -->
+        <label class="cursor-pointer border border-slate-200 rounded-xl p-3 hover:border-maroon-800 transition flex items-start gap-3 bg-slate-50 has-[:checked]:bg-maroon-50 has-[:checked]:border-maroon-800">
+          <input type="radio" name="feedback_mode" value="A" checked onchange="switchFeedbackMode('A')" class="mt-1 accent-maroon-800">
+          <div>
+            <span class="block text-xs font-bold text-slate-800">Option A: AI Feedback</span>
+            <span class="block text-[11px] text-slate-500 mt-0.5">Internet & ChatGPT / QuillBot available. Use automated micro-prompts.</span>
+          </div>
+        </label>
+
+        <!-- Option B -->
+        <label class="cursor-pointer border border-slate-200 rounded-xl p-3 hover:border-maroon-800 transition flex items-start gap-3 bg-slate-50 has-[:checked]:bg-maroon-50 has-[:checked]:border-maroon-800">
+          <input type="radio" name="feedback_mode" value="B" onchange="switchFeedbackMode('B')" class="mt-1 accent-maroon-800">
+          <div>
+            <span class="block text-xs font-bold text-slate-800">Option B: Peer Feedback</span>
+            <span class="block text-[11px] text-slate-500 mt-0.5">No internet/AI access. Work with a nearby classmate using guiding rubrics.</span>
+          </div>
+        </label>
+
+        <!-- Option C -->
+        <label class="cursor-pointer border border-slate-200 rounded-xl p-3 hover:border-maroon-800 transition flex items-start gap-3 bg-slate-50 has-[:checked]:bg-maroon-50 has-[:checked]:border-maroon-800">
+          <input type="radio" name="feedback_mode" value="C" onchange="switchFeedbackMode('C')" class="mt-1 accent-maroon-800">
+          <div>
+            <span class="block text-xs font-bold text-slate-800">Option C: Offline Strategy Cards</span>
+            <span class="block text-[11px] text-slate-500 mt-0.5">No internet and no partner. Use structured offline writing cards.</span>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <!-- STEP 1: WARM-UP (ACTIVATE) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">1</span>
+          STEP 1 — WARM-UP (ACTIVATE)
+        </h3>
+        <span class="text-xs font-semibold text-slate-500">Schema Activation & Context</span>
+      </div>
+
+      <!-- VISUAL MEDIA & BRIDGING SECTION -->
+      <div class="mb-5 grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        
+        <!-- LEFT: FOLKTALE BACKGROUND VIDEO -->
+        <div class="flex flex-col justify-between bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                1. Folktale Background Video
+              </span>
+              <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">
+                In-Tab Native Video
+              </span>
+            </div>
+
+            <!-- Native HTML5 Video Player -->
+            <div class="relative w-full rounded-lg overflow-hidden border border-slate-300 shadow-sm bg-black aspect-video flex items-center justify-center">
+              <video id="video_folktale" controls playsinline preload="metadata" class="w-full h-full object-contain">
+                <source src="folktale.mp4" type="video/mp4">
+                <source src="0ce4cea969bf47aeb175649d97e53d49.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <!-- Key Scene Highlights -->
+            <div class="mt-2.5 space-y-1">
+              <span class="text-[11px] font-bold text-slate-700 block">Key Folktale Plot Moments:</span>
+              <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-600">
+                <button onclick="playVideoAt('folktale', 1)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:01 • Sura in Sea</button>
+                <button onclick="playVideoAt('folktale', 5)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:05 • Epic Battle</button>
+                <button onclick="playVideoAt('folktale', 11)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:11 • Divide Territory</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3 bg-amber-50 p-2 rounded border border-amber-200 text-[11px] text-amber-900">
+            <strong>Traditional Context:</strong> Sura (shark) and Baya (crocodile) fight fiercely over prey until they agree to divide their hunting territory between sea and land.
+          </div>
+        </div>
+
+        <!-- RIGHT: MODERN CONCEPT VIDEO -->
+        <div class="flex flex-col justify-between bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 00-2 2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                2. Modern Concept Video
+              </span>
+              <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">
+                In-Tab Native Video
+              </span>
+            </div>
+
+            <!-- Native HTML5 Video Player -->
+            <div class="relative w-full rounded-lg overflow-hidden border border-slate-300 shadow-sm bg-black aspect-video flex items-center justify-center">
+              <video id="video_modern" controls playsinline preload="metadata" class="w-full h-full object-contain">
+                <source src="modern.mp4" type="video/mp4">
+                <source src="d3baac23aa72447c960733f8430a7277.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <!-- Key Scene Highlights -->
+            <div class="mt-2.5 space-y-1">
+              <span class="text-[11px] font-bold text-slate-700 block">Modern Story Plot Moments:</span>
+              <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-600">
+                <button onclick="playVideoAt('modern', 2)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:02 • Speeches</button>
+                <button onclick="playVideoAt('modern', 10)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:10 • Tied Votes!</button>
+                <button onclick="playVideoAt('modern', 13)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:13 • Handshake</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3 bg-blue-50 p-2 rounded border border-blue-200 text-[11px] text-blue-900">
+            <strong>Modern Bridge:</strong> Sura and Baya are adapted into high school classmates competing in a Student Council election. After a tied vote, they learn to share leadership!
+          </div>
+        </div>
+
+      </div>
+
+      <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+        Imagine Sura and Baya as students at school today. What kind of school conflict could happen between two strong, stubborn classmates?
+      </label>
+      <textarea id="step1_ideas" rows="3" placeholder="e.g., Sura and Baya were competing in the Student Council presidential election. Both refused to step down or share campaign promises until a tied vote forced them to become co-presidents..." oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800"></textarea>
+    </section>
+
+    <!-- STEP 2: STORY PLANNING & FIRST DRAFT (EXPLORE) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">2</span>
+          STEP 2 — STORY PLANNING & QUICK FIRST DRAFT (EXPLORE)
+        </h3>
+        <span class="text-xs font-semibold text-slate-500">Narrative Structure</span>
+      </div>
+
+      <!-- STORY PLANNER MATRIX -->
+      <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">2A. Story Plan Matrix</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">1. Orientation (Who, where, when?)</label>
+          <input type="text" id="plan_orientation" placeholder="e.g., Sura and Baya were top students in Class 10A last semester." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">2. Complication (What is the conflict?)</label>
+          <input type="text" id="plan_complication" placeholder="e.g., They both wanted the sole leadership role for the annual science project." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">3. Resolution (How is it resolved?)</label>
+          <input type="text" id="plan_resolution" placeholder="e.g., Their teacher made them co-captains, forcing them to divide responsibilities." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">4. Target Character Value</label>
+          <input type="text" id="plan_value" placeholder="e.g., Respect, Empathy, Teamwork, Honesty" oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+      </div>
+
+      <!-- FIRST DRAFT SENTENCE BUILDER -->
+      <div class="flex items-center justify-between mb-2">
+        <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">2B. Quick Write: My First Draft (5–7 Sentences)</h4>
+        <span class="text-[11px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Use simple past tense & temporal conjunctions</span>
+      </div>
+      
+      <div class="space-y-2 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">1.</span>
+          <input type="text" id="d1" placeholder="Sentence 1: Set the scene and introduce Sura & Baya..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">2.</span>
+          <input type="text" id="d2" placeholder="Sentence 2: Introduce the background condition..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">3.</span>
+          <input type="text" id="d3" placeholder="Sentence 3: Introduce the rising complication (Suddenly / One day)..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">4.</span>
+          <input type="text" id="d4" placeholder="Sentence 4: Describe the intense climax or argument..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">5.</span>
+          <input type="text" id="d5" placeholder="Sentence 5: Show the turning point or realization..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">6.</span>
+          <input type="text" id="d6" placeholder="Sentence 6: Explain the resolution (After that / Eventually)..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">7.</span>
+          <input type="text" id="d7" placeholder="Sentence 7 (Optional): Closing thought or moral lesson..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+      </div>
+
+      <!-- AUTOMATED FIRST DRAFT PARAGRAPH COMPILATION BOX -->
+      <div class="bg-amber-50 border border-amber-300 rounded-xl p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-amber-900 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 02-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            Automated Draft Compilation (Paragraph View)
+          </span>
+          <div class="flex items-center gap-3">
+            <span id="draft_word_count" class="text-[11px] font-semibold text-amber-800">0 words</span>
+            <button onclick="copyToClipboard('compiled_draft_text', 'First draft copied!')" class="no-print text-[11px] bg-amber-600 hover:bg-amber-700 text-white font-medium px-2.5 py-1 rounded transition">
+              Copy Draft Paragraph
+            </button>
+          </div>
+        </div>
+        <p id="compiled_draft_text" class="text-xs text-slate-800 leading-relaxed italic bg-white p-3 rounded border border-amber-200 min-h-[50px]">
+          Start typing your sentences above to see your compiled first draft paragraph appear here automatically...
+        </p>
+
+        <!-- STEP 2 AUTOMATED GRAMMAR & VOCABULARY CHECKER -->
+        <div class="mt-4 pt-3 border-t border-amber-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-amber-900 flex items-center gap-1">
+              <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Step 2 Draft Diagnostic: Narrative Writing Rubric Checker
+            </span>
+            <button onclick="runGrammarCheck('draft')" class="no-print bg-amber-700 hover:bg-amber-800 text-white text-[11px] font-semibold px-3 py-1 rounded transition flex items-center gap-1">
+              🔍 Run Narrative Rubric Checker
+            </button>
+          </div>
+
+          <div id="draft_grammar_report" class="hidden bg-white p-3 rounded-lg border border-amber-200 text-xs space-y-2">
+            <!-- Dynamic Report Content Inserted via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: GETTING FEEDBACK (INTERPRET) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">3</span>
+          STEP 3 — GETTING FEEDBACK (INTERPRET)
+        </h3>
+        <span id="active_mode_badge" class="text-xs font-bold bg-maroon-100 text-maroon-800 px-2.5 py-0.5 rounded">
+          Active: Option A (AI Feedback)
+        </span>
+      </div>
+
+      <!-- SECTION 3A: AI FEEDBACK -->
+      <div id="section_3a" class="space-y-4">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <h4 class="text-xs font-bold text-slate-800 mb-1">3A. Automated AI Feedback Simulator</h4>
+          <p class="text-xs text-slate-600 mb-3">
+            Click the simulator button below to generate instant writing feedback on your draft paragraph, or paste your prompt into ChatGPT/QuillBot.
+          </p>
+          
+          <button onclick="runAISimulator()" class="no-print bg-maroon-800 hover:bg-maroon-900 text-white text-xs font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2 shadow-sm mb-3">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Generate AI Feedback Analysis
+          </button>
+
+          <div id="ai_suggestions_container" class="space-y-2">
+            <label class="block text-xs font-semibold text-slate-700">Record AI Suggestions & Action Plan (Check ✓ to use, ✗ to skip):</label>
+            
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="ai_chk1" onchange="autoSaveData()" class="accent-maroon-800 w-4 h-4">
+              <input type="text" id="ai_sug1" placeholder="Suggestion 1: e.g., Use contractions in dialogue (I'm, didn't) to sound natural." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded px-3 py-1.5 focus:ring-1 focus:ring-maroon-800">
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="ai_chk2" onchange="autoSaveData()" class="accent-maroon-800 w-4 h-4">
+              <input type="text" id="ai_sug2" placeholder="Suggestion 2: e.g., Add 'Eventually' as a temporal transition before the resolution." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded px-3 py-1.5 focus:ring-1 focus:ring-maroon-800">
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="ai_chk3" onchange="autoSaveData()" class="accent-maroon-800 w-4 h-4">
+              <input type="text" id="ai_sug3" placeholder="Suggestion 3: e.g., Emphasize the character value of mutual respect in sentence 7." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded px-3 py-1.5 focus:ring-1 focus:ring-maroon-800">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3B: PEER FEEDBACK -->
+      <div id="section_3b" class="space-y-4 hidden">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs font-bold text-slate-800">3B. Structured Peer Feedback Matrix</h4>
+            <div class="flex items-center gap-2 text-xs">
+              <span class="font-semibold text-slate-700">Partner's Name:</span>
+              <input type="text" id="peer_name" placeholder="Classmate Name" oninput="autoSaveData()" class="bg-white border border-slate-300 rounded px-2 py-1 text-xs">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Guiding Q1: How can dialogue & tone between characters be improved?</label>
+            <textarea id="peer_q1" rows="2" placeholder="Partner feedback on dialogue..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Guiding Q2: How can the ending and moral value be made more meaningful?</label>
+            <textarea id="peer_q2" rows="2" placeholder="Partner feedback on resolution..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Guiding Q3: Is the sequence of events (Orientation → Complication → Resolution) clear?</label>
+            <textarea id="peer_q3" rows="2" placeholder="Partner feedback on story structure..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3C: OFFLINE CARDS -->
+      <div id="section_3c" class="space-y-4 hidden">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <h4 class="text-xs font-bold text-slate-800 mb-2">3C. Interactive Offline AI Feedback Cards</h4>
+          <p class="text-xs text-slate-600 mb-3">Click on strategy cards to inspect tips and apply them to your notes below:</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 1 — Dialogue & Tone</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>Use contractions (I'm, didn't) to sound natural.</li>
+                <li>Add quick reactions: <em>Sura sighed, "Fine, let's divide it."</em></li>
+                <li>Show feelings through action rather than telling ("I am mad").</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 2 — Setting & Sensory Details</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>Add one vivid sensory detail (e.g., tense silence, crowded library).</li>
+                <li>Use specific descriptors instead of generic words.</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 3 — Temporal Conjunctions</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>Start key sentences with time markers: <em>Suddenly, After that, Eventually</em>.</li>
+                <li>Avoid repeating "then" continuously.</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 4 — Meaningful Resolution</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>End with what the characters learned about each other.</li>
+                <li>Connect the resolution directly to character growth.</li>
+              </ul>
+            </div>
+          </div>
+
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Notes on Selected Offline Card Strategies Applied:</label>
+          <textarea id="offline_card_notes" rows="2" placeholder="Describe which card tips you selected and how they will improve your revision..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: REVISION & REFLECTION (CREATE) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">4</span>
+          STEP 4 — REVISION & REFLECTION (CREATE)
+        </h3>
+        <span class="text-xs font-semibold text-slate-500">Final Narrative Polish</span>
+      </div>
+
+      <!-- REVISED STORY SENTENCE INPUTS -->
+      <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">4A. My Revised / Final Story (5–7 Sentences)</h4>
+      <div class="space-y-2 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">1.</span>
+          <input type="text" id="r1" placeholder="Revised Sentence 1..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">2.</span>
+          <input type="text" id="r2" placeholder="Revised Sentence 2..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">3.</span>
+          <input type="text" id="r3" placeholder="Revised Sentence 3..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">4.</span>
+          <input type="text" id="r4" placeholder="Revised Sentence 4..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">5.</span>
+          <input type="text" id="r5" placeholder="Revised Sentence 5..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">6.</span>
+          <input type="text" id="r6" placeholder="Revised Sentence 6..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">7.</span>
+          <input type="text" id="r7" placeholder="Revised Sentence 7 (Optional)..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+      </div>
+
+      <!-- AUTOMATED COMPILED REVISED PARAGRAPH BOX -->
+      <div class="bg-maroon-50 border border-maroon-200 rounded-xl p-4 mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-maroon-900 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Automated Final Compiled Story Paragraph
+          </span>
+          <div class="flex items-center gap-3">
+            <span id="revised_word_count" class="text-[11px] font-semibold text-maroon-800">0 words</span>
+            <button onclick="copyToClipboard('compiled_revised_text', 'Final story copied!')" class="no-print text-[11px] bg-maroon-800 hover:bg-maroon-900 text-white font-medium px-2.5 py-1 rounded transition">
+              Copy Final Paragraph
+            </button>
+          </div>
+        </div>
+        <p id="compiled_revised_text" class="text-xs text-slate-800 leading-relaxed font-normal bg-white p-3.5 rounded border border-maroon-200 min-h-[60px]">
+          Fill in your revised sentences above to generate your final polished paragraph...
+        </p>
+
+        <!-- STEP 4 AUTOMATED GRAMMAR & VOCABULARY RE-CHECKER -->
+        <div class="mt-4 pt-3 border-t border-maroon-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-maroon-900 flex items-center gap-1">
+              <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Step 4 Final Draft Diagnostic: Narrative Rubric Re-Check
+            </span>
+            <button onclick="runGrammarCheck('revised')" class="no-print bg-maroon-800 hover:bg-maroon-900 text-white text-[11px] font-semibold px-3 py-1 rounded transition flex items-center gap-1">
+              ✨ Run Final Paragraph Rubric Checker
+            </button>
+          </div>
+
+          <div id="revised_grammar_report" class="hidden bg-white p-3 rounded-lg border border-maroon-200 text-xs space-y-2">
+            <!-- Dynamic Final Report Content Inserted via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- MANDATORY ACKNOWLEDGEMENT STATEMENT -->
+      <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <label class="block text-xs font-bold text-slate-800 mb-1">
+          Feedback Acknowledgement Statement (Required):
+        </label>
+        <p class="text-[11px] text-slate-500 mb-2">Write one short sentence acknowledging what you revised based on AI, peer, or card feedback.</p>
+        <input type="text" id="feedback_ack" placeholder="e.g., I revised the dialogue in sentence 4 to include contractions based on AI feedback." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+      </div>
+
+      <!-- REFLECTION QUESTIONS -->
+      <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">4B. Reflection Questions</h4>
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">1. What character value (empathy, responsibility, honesty, teamwork) is highlighted in your story?</label>
+          <textarea id="ref_q1" rows="2" placeholder="Explain the core moral or character value..." oninput="autoSaveData()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded p-2 focus:bg-white focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">2. Which feedback mode did you use today (AI / Peer / Offline Card), and how did it help you revise?</label>
+          <textarea id="ref_q2" rows="2" placeholder="Reflect on the feedback process..." oninput="autoSaveData()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded p-2 focus:bg-white focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">3. What did you learn about getting feedback and revising responsibly — with or without AI?</label>
+          <textarea id="ref_q3" rows="2" placeholder="Reflect on digital literacy and critical ownership..." oninput="autoSaveData()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded p-2 focus:bg-white focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5: AUTOMATED EVALUATION & SCORING PORTAL -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">5</span>
+          STEP 5 — SUBMISSION & AUTOMATED SCORING PORTAL
+        </h3>
+        <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded">
+          Passing Score: 78–80 (Grade B)
+        </span>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4">
+        Click below to run automated evaluation on your completed LKM. Your final submission must meet or exceed the minimum score of <strong>78 (Grade B)</strong>.
+      </p>
+
+      <div class="no-print mb-6 flex flex-wrap items-center gap-3">
+        <button onclick="evaluateWorksheet()" class="bg-amberGold-500 hover:bg-amberGold-600 text-slate-900 font-bold text-xs px-5 py-2.5 rounded-lg shadow-md transition flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Evaluate & Calculate Score
+        </button>
+      </div>
+
+      <!-- SCORING SCORECARD DASHBOARD -->
+      <div id="scorecard_result" class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 text-center">
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">1. Structure & Target</span>
+            <span id="score_sec1" class="text-lg font-black text-slate-800">0 / 25</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">2. Language & Conjunctions</span>
+            <span id="score_sec2" class="text-lg font-black text-slate-800">0 / 25</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">3. Feedback & Revision</span>
+            <span id="score_sec3" class="text-lg font-black text-slate-800">0 / 25</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">4. Reflection & Integrity</span>
+            <span id="score_sec4" class="text-lg font-black text-slate-800">0 / 25</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between bg-white p-4 rounded-lg border border-slate-200 gap-4">
+          <div class="text-center sm:text-left">
+            <span class="text-xs text-slate-500 font-semibold block">Total Evaluated Score</span>
+            <div class="flex items-baseline gap-2">
+              <span id="total_score" class="text-3xl font-black text-maroon-800">0</span>
+              <span class="text-xs text-slate-400 font-bold">/ 100 Points</span>
+            </div>
+          </div>
+
+          <div class="text-center sm:text-right">
+            <span class="text-xs text-slate-500 font-semibold block">Academic Status</span>
+            <span id="grade_badge" class="inline-block text-xs font-extrabold px-3 py-1 rounded-full bg-slate-200 text-slate-700 mt-1">
+              Not Evaluated
+            </span>
+          </div>
+        </div>
+
+        <!-- REVISION FEEDBACK NOTICE -->
+        <div id="evaluation_notice" class="mt-4 text-xs p-3 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
+          Click "Evaluate & Calculate Score" to check your worksheet submission readiness.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT CORE LOGIC -->
+  <script>
+    function playVideoAt(targetKey, seconds) {
+      const vid = document.getElementById(`video_${targetKey}`);
+      if (vid) {
+        // Pause the other video if playing
+        const otherKey = targetKey === 'folktale' ? 'modern' : 'folktale';
+        const otherVid = document.getElementById(`video_${otherKey}`);
+        if (otherVid && !otherVid.paused) {
+          otherVid.pause();
+        }
+
+        vid.currentTime = seconds;
+        vid.play().catch(e => {
+          console.log("Autoplay playback error:", e);
+        });
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Set today's date default
+      const dateInput = document.getElementById('std_date');
+      if (dateInput && !dateInput.value) {
+        dateInput.value = new Date().toISOString().split('T')[0];
+      }
+
+      loadSavedData();
+      compileDraftParagraph();
+      compileRevisedParagraph();
+    });
+
+    // MODE SWITCHING LOGIC
+    function switchFeedbackMode(mode) {
+      document.getElementById('section_3a').classList.add('hidden');
+      document.getElementById('section_3b').classList.add('hidden');
+      document.getElementById('section_3c').classList.add('hidden');
+
+      const badge = document.getElementById('active_mode_badge');
+
+      if (mode === 'A') {
+        document.getElementById('section_3a').classList.remove('hidden');
+        badge.innerText = "Active: Option A (AI Feedback)";
+      } else if (mode === 'B') {
+        document.getElementById('section_3b').classList.remove('hidden');
+        badge.innerText = "Active: Option B (Peer Feedback)";
+      } else if (mode === 'C') {
+        document.getElementById('section_3c').classList.remove('hidden');
+        badge.innerText = "Active: Option C (Offline Cards)";
+      }
+      autoSaveData();
+    }
+
+    function compileDraftParagraph() {
+      const inputs = [];
+      for (let i = 1; i <= 7; i++) {
+        const val = document.getElementById(`d${i}`).value.trim();
+        if (val) {
+          inputs.push(ensurePunctuation(val));
+        }
+      }
+
+      const textDisplay = document.getElementById('compiled_draft_text');
+      const countDisplay = document.getElementById('draft_word_count');
+
+      if (inputs.length === 0) {
+        textDisplay.innerText = "Start typing your sentences above to see your compiled first draft paragraph appear here automatically...";
+        countDisplay.innerText = "0 words";
+      } else {
+        const fullPara = inputs.join(' ');
+        textDisplay.innerText = fullPara;
+        const words = fullPara.split(/\s+/).filter(w => w.length > 0).length;
+        countDisplay.innerText = `${words} words`;
+      }
+      autoSaveData();
+    }
+
+    function compileRevisedParagraph() {
+      const inputs = [];
+      for (let i = 1; i <= 7; i++) {
+        const val = document.getElementById(`r${i}`).value.trim();
+        if (val) {
+          inputs.push(ensurePunctuation(val));
+        }
+      }
+
+      const textDisplay = document.getElementById('compiled_revised_text');
+      const countDisplay = document.getElementById('revised_word_count');
+
+      if (inputs.length === 0) {
+        textDisplay.innerText = "Fill in your revised sentences above to generate your final polished paragraph...";
+        countDisplay.innerText = "0 words";
+      } else {
+        const fullPara = inputs.join(' ');
+        textDisplay.innerText = fullPara;
+        const words = fullPara.split(/\s+/).filter(w => w.length > 0).length;
+        countDisplay.innerText = `${words} words`;
+      }
+      autoSaveData();
+    }
+
+    function ensurePunctuation(sentence) {
+      if (!sentence) return '';
+      const lastChar = sentence.slice(-1);
+      if (['.', '!', '?'].includes(lastChar)) {
+        return sentence;
+      }
+      return sentence + '.';
+    }
+
+    function runGrammarCheck(targetType) {
+      const textId = targetType === 'draft' ? 'compiled_draft_text' : 'compiled_revised_text';
+      const reportId = targetType === 'draft' ? 'draft_grammar_report' : 'revised_grammar_report';
+      
+      const rawText = document.getElementById(textId).innerText;
+      const reportBox = document.getElementById(reportId);
+
+      if (rawText.includes('Start typing') || rawText.includes('Fill in your revised')) {
+        showToast("⚠️ Please write a few sentences first before running the rubric checker!", "warning");
+        return;
+      }
+
+      reportBox.classList.remove('hidden');
+
+      const lowerText = rawText.toLowerCase();
+      const words = lowerText.match(/\b[a-z']+\b/g) || [];
+      const totalWords = words.length;
+
+      // --- NARRATIVE WRITING SCORING RUBRIC DIAGNOSTICS ---
+
+      // 1. Narrative Structure & Completeness (Orientation, Complication, Resolution)
+      const sentences = rawText.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 0);
+      const sentenceCount = sentences.length;
+      let structureScore = 0; // max 25
+      let structureStatus = "";
+      if (sentenceCount >= 5 && sentenceCount <= 7) {
+        structureScore = 25;
+        structureStatus = "Optimal (5–7 Sentences)";
+      } else if (sentenceCount >= 3) {
+        structureScore = 18;
+        structureStatus = `Developing (${sentenceCount} Sentences — Add ${5 - sentenceCount} more)`;
+      } else {
+        structureScore = 10;
+        structureStatus = `Incomplete (${sentenceCount} Sentences — Min. 5 needed)`;
+      }
+
+      // 2. Grammar & Tense Accuracy (Simple Past Focus)
+      const presentVerbs = ['is', 'are', 'am', 'go', 'goes', 'run', 'runs', 'fight', 'fights', 'argue', 'argues', 'want', 'wants', 'say', 'says', 'take', 'takes', 'refuse', 'refuses', 'think', 'thinks', 'has', 'have', 'decide', 'decides'];
+      const pastVerbs = ['was', 'were', 'went', 'ran', 'fought', 'argued', 'wanted', 'said', 'took', 'refused', 'thought', 'agreed', 'decided', 'competed', 'divided', 'solved', 'learned', 'shared', 'had'];
+
+      let foundPresent = [];
+      let foundPast = [];
+
+      words.forEach(w => {
+        if (presentVerbs.includes(w) && !foundPresent.includes(w)) foundPresent.push(w);
+        if (pastVerbs.includes(w) && !foundPast.includes(w)) foundPast.push(w);
+      });
+
+      let tenseScore = 25;
+      if (foundPresent.length > 0) {
+        tenseScore = Math.max(10, 25 - (foundPresent.length * 5));
+      }
+
+      // 3. Cohesive Devices & Transitions (Temporal Conjunctions)
+      const temporalConnectors = ['suddenly', 'after that', 'eventually', 'first', 'then', 'finally', 'meanwhile', 'later', 'one day', 'moments later', 'before long', 'next', 'in the end', 'at last'];
+      let foundConnectors = [];
+      temporalConnectors.forEach(c => {
+        if (lowerText.includes(c)) foundConnectors.push(c);
+      });
+
+      let transitionScore = 0;
+      if (foundConnectors.length >= 2) transitionScore = 25;
+      else if (foundConnectors.length === 1) transitionScore = 15;
+      else transitionScore = 8;
+
+      // 4. Vocabulary Richness & Style (Lexical Variety & Action Verbs)
+      const weakWordMap = {
+        'said': ['replied', 'exclaimed', 'shouted', 'argued', 'demanded', 'insisted'],
+        'angry': ['furious', 'irritated', 'indignant', 'enraged'],
+        'bad': ['harmful', 'destructive', 'hostile', 'unfavorable'],
+        'good': ['beneficial', 'constructive', 'exemplary', 'admirable'],
+        'went': ['marched', 'rushed', 'stormed', 'proceeded'],
+        'big': ['significant', 'intense', 'massive', 'substantial'],
+        'got': ['received', 'obtained', 'acquired', 'earned']
+      };
+
+      let vocabularySuggestions = [];
+      Object.keys(weakWordMap).forEach(weakWord => {
+        if (words.includes(weakWord)) {
+          vocabularySuggestions.push({
+            weak: weakWord,
+            better: weakWordMap[weakWord].join(', ')
+          });
+        }
+      });
+
+      const uniqueWords = new Set(words).size;
+      const vocabVarietyPct = totalWords > 0 ? Math.round((uniqueWords / totalWords) * 100) : 0;
+      let vocabScore = Math.min(25, Math.max(10, Math.round(vocabVarietyPct * 0.35) + (vocabularySuggestions.length === 0 ? 8 : 2)));
+
+      // Overall Diagnostic Rubric Total
+      const overallRubricScore = structureScore + tenseScore + transitionScore + vocabScore;
+
+      // Construct Diagnostic UI Report
+      let reportHTML = `
+        <div class="border-b border-slate-200 pb-2.5 mb-3 flex items-center justify-between">
+          <div>
+            <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wide">Narrative Writing Rubric Assessment</h5>
+            <p class="text-[11px] text-slate-500">Based on ESL/EFL Narrative Competency Standards</p>
+          </div>
+          <div class="text-right">
+            <span class="text-lg font-black ${overallRubricScore >= 78 ? 'text-emerald-700' : 'text-amber-700'}">${overallRubricScore} / 100</span>
+            <span class="block text-[10px] font-bold ${overallRubricScore >= 78 ? 'text-emerald-800 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-2 py-0.5 rounded">
+              ${overallRubricScore >= 78 ? '✅ Rubric Benchmark Met' : '⚠️ Revision Recommended'}
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">1. Structure</span>
+            <span class="text-xs font-bold ${structureScore >= 20 ? 'text-emerald-700' : 'text-amber-700'}">${structureScore}/25 pts</span>
+            <span class="block text-[10px] text-slate-500 truncate">${structureStatus}</span>
+          </div>
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">2. Past Tense</span>
+            <span class="text-xs font-bold ${tenseScore >= 20 ? 'text-emerald-700' : 'text-amber-700'}">${tenseScore}/25 pts</span>
+            <span class="block text-[10px] text-slate-500">${foundPresent.length === 0 ? 'Consistent Past' : `${foundPresent.length} Present Verb(s)`}</span>
+          </div>
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">3. Transitions</span>
+            <span class="text-xs font-bold ${transitionScore >= 20 ? 'text-emerald-700' : 'text-amber-700'}">${transitionScore}/25 pts</span>
+            <span class="block text-[10px] text-slate-500">${foundConnectors.length} Connector(s)</span>
+          </div>
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">4. Vocabulary</span>
+            <span class="text-xs font-bold ${vocabScore >= 18 ? 'text-emerald-700' : 'text-blue-700'}">${vocabScore}/25 pts</span>
+            <span class="block text-[10px] text-slate-500">${vocabVarietyPct}% Unique Words</span>
+          </div>
+        </div>
+
+        <!-- SPECIFIC AREAS NEEDING ATTENTION -->
+        <div class="space-y-2 text-[11px]">
+          <div class="p-2.5 rounded border ${foundPresent.length > 0 ? 'bg-amber-50 border-amber-300 text-amber-900' : 'bg-emerald-50 border-emerald-300 text-emerald-900'}">
+            <strong class="block mb-1">📍 Tense & Grammar Attention:</strong>
+      `;
+
+      if (foundPresent.length > 0) {
+        reportHTML += `
+            <p>Convert present-tense words (<code class="font-bold text-amber-950">${foundPresent.join(', ')}</code>) into Simple Past Tense. For example:</p>
+            <ul class="list-disc pl-4 mt-1 space-y-0.5">
+        `;
+        foundPresent.forEach(verb => {
+          let pastSuggest = "was/were/did";
+          if (verb === 'is') pastSuggest = 'was';
+          else if (verb === 'are') pastSuggest = 'were';
+          else if (verb === 'go' || verb === 'goes') pastSuggest = 'went';
+          else if (verb === 'run' || verb === 'runs') pastSuggest = 'ran';
+          else if (verb === 'fight' || verb === 'fights') pastSuggest = 'fought';
+          else if (verb === 'argue' || verb === 'argues') pastSuggest = 'argued';
+          else if (verb === 'want' || verb === 'wants') pastSuggest = 'wanted';
+          else if (verb === 'say' || verb === 'says') pastSuggest = 'said';
+          else if (verb === 'think' || verb === 'thinks') pastSuggest = 'thought';
+          reportHTML += `<li>Replace "<strong>${verb}</strong>" with "<em>${pastSuggest}</em>"</li>`;
+        });
+        reportHTML += `</ul>`;
+      } else {
+        reportHTML += `<p>✅ Excellent! Your narrative uses simple past tense consistently.</p>`;
+      }
+
+      reportHTML += `</div>`;
+
+      // Temporal Conjunction Diagnostic
+      reportHTML += `
+        <div class="p-2.5 rounded border ${foundConnectors.length < 2 ? 'bg-amber-50 border-amber-300 text-amber-900' : 'bg-emerald-50 border-emerald-300 text-emerald-900'}">
+          <strong class="block mb-1">📍 Cohesion & Transitions Attention:</strong>
+      `;
+      if (foundConnectors.length < 2) {
+        reportHTML += `
+          <p>Add at least 2 temporal conjunctions to link your story sequence (Orientation → Complication → Resolution). Suggested words to insert:</p>
+          <div class="flex flex-wrap gap-1 mt-1.5">
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">Suddenly</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">After that</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">Eventually</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">Meanwhile</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">In the end</span>
+          </div>
+        `;
+      } else {
+        reportHTML += `<p>✅ Strong temporal flow! You included transition signals: <strong>${foundConnectors.join(', ')}</strong>.</p>`;
+      }
+      reportHTML += `</div>`;
+
+      // Vocabulary Enhancement Guidance
+      if (vocabularySuggestions.length > 0) {
+        reportHTML += `
+          <div class="p-2.5 bg-blue-50 border border-blue-300 text-blue-900 rounded">
+            <strong class="block mb-1">📍 Vocabulary & Word Choice Upgrades:</strong>
+            <p class="mb-1">Replace generic words with vivid narrative action verbs and adjectives:</p>
+            <ul class="list-disc pl-4 space-y-0.5">
+        `;
+        vocabularySuggestions.forEach(item => {
+          reportHTML += `<li>Replace overused "<strong>${item.weak}</strong>" with vivid alternatives: <em>${item.better}</em></li>`;
+        });
+        reportHTML += `</ul></div>`;
+      }
+
+      // Sentence Target Feedback
+      if (sentenceCount < 5) {
+        reportHTML += `
+          <div class="p-2 bg-red-50 border border-red-200 text-red-900 rounded">
+            <strong>⚠️ Story Length:</strong> You currently have ${sentenceCount} sentence(s). Please expand your story to <strong>5–7 sentences</strong> to meet the narrative target.
+          </div>
+        `;
+      }
+
+      reportHTML += `</div>`;
+      reportBox.innerHTML = reportHTML;
+      showToast(`🔍 ${targetType === 'draft' ? 'First draft' : 'Final draft'} rubric analysis completed!`);
+    }
+
+    function runAISimulator() {
+      const draftText = document.getElementById('compiled_draft_text').innerText;
+      if (draftText.includes('Start typing your sentences')) {
+        showToast("⚠️ Please enter a few sentences in Step 2 draft first!", "warning");
+        return;
+      }
+
+      document.getElementById('ai_chk1').checked = true;
+      document.getElementById('ai_chk2').checked = true;
+      document.getElementById('ai_chk3').checked = true;
+
+      document.getElementById('ai_sug1').value = "Use dialogue contractions (e.g., 'We can't both lead!') to make Sura and Baya's arguments feel realistic.";
+      document.getElementById('ai_sug2').value = "Add temporal conjunctions like 'Suddenly' in sentence 3 and 'Eventually' in sentence 6 for coherent transition.";
+      document.getElementById('ai_sug3').value = "Strengthen sentence 7 by explicitly highlighting mutual respect and responsibility.";
+
+      showToast("✨ AI Suggestions generated successfully!");
+      autoSaveData();
+    }
+
+    function evaluateWorksheet() {
+      let score1 = 0; // Structure & Target
+      let score2 = 0; // Language & Conjunctions
+      let score3 = 0; // Feedback & Revision
+      let score4 = 0; // Reflection & Integrity
+
+      // 1. Structure & Target (25 pts)
+      const orientation = document.getElementById('plan_orientation').value.trim();
+      const complication = document.getElementById('plan_complication').value.trim();
+      const resolution = document.getElementById('plan_resolution').value.trim();
+      const value = document.getElementById('plan_value').value.trim();
+
+      if (orientation) score1 += 6;
+      if (complication) score1 += 6;
+      if (resolution) score1 += 6;
+      if (value) score1 += 7;
+
+      // 2. Language & Conjunctions (25 pts)
+      let revisedCount = 0;
+      for (let i = 1; i <= 7; i++) {
+        if (document.getElementById(`r${i}`).value.trim()) revisedCount++;
+      }
+      if (revisedCount >= 5) score2 += 15;
+      else score2 += (revisedCount * 3);
+
+      const finalPara = document.getElementById('compiled_revised_text').innerText.toLowerCase();
+      const conjunctions = ['suddenly', 'after that', 'eventually', 'one day', 'finally', 'then', 'meanwhile', 'however'];
+      let conjFound = 0;
+      conjunctions.forEach(c => {
+        if (finalPara.includes(c)) conjFound++;
+      });
+      if (conjFound >= 2) score2 += 10;
+      else if (conjFound === 1) score2 += 5;
+
+      // 3. Feedback & Revision (25 pts)
+      const mode = document.querySelector('input[name="feedback_mode"]:checked').value;
+      if (mode === 'A') {
+        if (document.getElementById('ai_sug1').value.trim()) score3 += 10;
+        if (document.getElementById('ai_sug2').value.trim()) score3 += 10;
+      } else if (mode === 'B') {
+        if (document.getElementById('peer_q1').value.trim()) score3 += 10;
+        if (document.getElementById('peer_q2').value.trim()) score3 += 10;
+      } else {
+        if (document.getElementById('offline_card_notes').value.trim()) score3 += 20;
+      }
+      if (document.getElementById('feedback_ack').value.trim()) score3 += 5;
+
+      // 4. Reflection & Integrity (25 pts)
+      if (document.getElementById('ref_q1').value.trim()) score4 += 8;
+      if (document.getElementById('ref_q2').value.trim()) score4 += 8;
+      if (document.getElementById('ref_q3').value.trim()) score4 += 9;
+
+      const total = score1 + score2 + score3 + score4;
+
+      document.getElementById('score_sec1').innerText = `${score1} / 25`;
+      document.getElementById('score_sec2').innerText = `${score2} / 25`;
+      document.getElementById('score_sec3').innerText = `${score3} / 25`;
+      document.getElementById('score_sec4').innerText = `${score4} / 25`;
+      document.getElementById('total_score').innerText = total;
+
+      const badge = document.getElementById('grade_badge');
+      const notice = document.getElementById('evaluation_notice');
+
+      if (total >= 78) {
+        badge.className = "inline-block text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 mt-1";
+        badge.innerText = `PASSED (Grade ${total >= 88 ? 'A' : 'B'}) — Ready for Submission!`;
+        
+        notice.className = "mt-4 text-xs p-3.5 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-900";
+        notice.innerHTML = `<strong>🎉 Congratulations!</strong> Your total score is <strong>${total}/100</strong>, meeting the target threshold (78–80 Grade B). You may now export or print your completed LKM for class discussion!`;
+      } else {
+        badge.className = "inline-block text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 mt-1";
+        badge.innerText = `REVISION NEEDED (Score: ${total} / Min 78 Target)`;
+
+        notice.className = "mt-4 text-xs p-3.5 rounded-lg bg-amber-50 border border-amber-300 text-amber-900";
+        notice.innerHTML = `<strong>⚠️ Target Grade B (Min. 78) Not Met Yet.</strong> Current score: <strong>${total}/100</strong>.<br>
+        <ul class="list-disc pl-4 mt-1 space-y-0.5">
+          ${score1 < 25 ? '<li>Complete all 4 boxes in Step 2A Story Plan Matrix.</li>' : ''}
+          ${score2 < 25 ? '<li>Ensure you have at least 5–7 revised sentences in Step 4A and include temporal conjunctions (Suddenly, Eventually, After that).</li>' : ''}
+          ${score3 < 25 ? '<li>Fill in your feedback suggestions in Step 3 and complete the acknowledgement line.</li>' : ''}
+          ${score4 < 25 ? '<li>Answer all 3 reflection questions in Step 4B.</li>' : ''}
+        </ul>`;
+      }
+      autoSaveData();
+    }
+
+    function exportToWord() {
+      const name = document.getElementById('std_name').value || 'Student';
+      const id = document.getElementById('std_id').value || 'N/A';
+      const cls = document.getElementById('std_class').value || 'N/A';
+      const date = document.getElementById('std_date').value || 'N/A';
+
+      const orientation = document.getElementById('plan_orientation').value || '-';
+      const complication = document.getElementById('plan_complication').value || '-';
+      const resolution = document.getElementById('plan_resolution').value || '-';
+      const value = document.getElementById('plan_value').value || '-';
+
+      const initialPara = document.getElementById('compiled_draft_text').innerText;
+      const revisedPara = document.getElementById('compiled_revised_text').innerText;
+      const ack = document.getElementById('feedback_ack').value || '-';
+
+      const q1 = document.getElementById('ref_q1').value || '-';
+      const q2 = document.getElementById('ref_q2').value || '-';
+      const q3 = document.getElementById('ref_q3').value || '-';
+
+      const totalScore = document.getElementById('total_score').innerText;
+
+      const htmlContent = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+          <title>Student Worksheet - ${name}</title>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.5; font-size: 11pt; color: #111; }
+            h1 { color: #800000; font-size: 16pt; margin-bottom: 2pt; }
+            h2 { color: #800000; font-size: 13pt; border-bottom: 1px solid #800000; padding-bottom: 3pt; margin-top: 15pt; }
+            table { width: 100%; border-collapse: collapse; margin-top: 10pt; }
+            td, th { border: 1px solid #ccc; padding: 6pt; font-size: 10pt; text-align: left; }
+            th { background-color: #f2f2f2; font-weight: bold; }
+            .box { background-color: #f9f9f9; border: 1px solid #ddd; padding: 8pt; margin-top: 5pt; font-style: italic; }
+          </style>
+        </head>
+        <body>
+          <h1>STKIP AL HIKMAH SURABAYA</h1>
+          <p><strong>Basic Written English (KK0211302) — LKM Modern Story Writing</strong></p>
+          
+          <table>
+            <tr><th>Student Name</th><td>${name}</td><th>Student ID</th><td>${id}</td></tr>
+            <tr><th>Class / Session</th><td>${cls}</td><th>Date</th><td>${date}</td></tr>
+          </table>
+
+          <h2>Step 2 — Story Plan Matrix</h2>
+          <table>
+            <tr><th>Orientation</th><td>${orientation}</td></tr>
+            <tr><th>Complication</th><td>${complication}</td></tr>
+            <tr><th>Resolution</th><td>${resolution}</td></tr>
+            <tr><th>Character Value</th><td>${value}</td></tr>
+          </table>
+
+          <h2>Step 2 — Quick First Draft</h2>
+          <div class="box">${initialPara}</div>
+
+          <h2>Step 4 — Revised / Final Story</h2>
+          <div class="box" style="font-style:normal; font-weight:bold;">${revisedPara}</div>
+
+          <p><strong>Feedback Acknowledgement:</strong> ${ack}</p>
+
+          <h2>Step 4B — Reflections</h2>
+          <p><strong>1. Character Value:</strong> ${q1}</p>
+          <p><strong>2. Feedback Mode & Process:</strong> ${q2}</p>
+          <p><strong>3. Learning & Digital Integrity:</strong> ${q3}</p>
+
+          <h2>Step 5 — Scorecard Summary</h2>
+          <p><strong>Evaluated Score:</strong> ${totalScore} / 100 Points</p>
+        </body>
+        </html>
+      `;
+
+      const blob = new Blob(['\ufeff', htmlContent], {
+        type: 'application/msword'
+      });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `LKM_Suro_Boyo_${name.replace(/\s+/g, '_')}.doc`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showToast("📄 Word document (.doc) downloaded!");
+    }
+
+    function copyToClipboard(elementId, successMsg) {
+      const text = document.getElementById(elementId).innerText;
+      if (!text || text.includes('Start typing') || text.includes('Fill in your revised')) {
+        showToast("⚠️ Nothing to copy yet!", "warning");
+        return;
+      }
+      
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = text;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy');
+        showToast(`📋 ${successMsg}`);
+      } catch (err) {
+        showToast("⚠️ Copy failed", "warning");
+      }
+      document.body.removeChild(tempTextArea);
+    }
+
+    function autoSaveData() {
+      const data = {};
+      const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+      inputs.forEach(input => {
+        if (input.id) data[input.id] = input.value;
+      });
+
+      const selectedMode = document.querySelector('input[name="feedback_mode"]:checked');
+      if (selectedMode) data['feedback_mode'] = selectedMode.value;
+
+      ['ai_chk1', 'ai_chk2', 'ai_chk3'].forEach(id => {
+        const chk = document.getElementById(id);
+        if (chk) data[id] = chk.checked;
+      });
+
+      localStorage.setItem('suro_boyo_lkm_data', JSON.stringify(data));
+    }
+
+    function saveProgress() {
+      autoSaveData();
+      showToast("✅ Progress saved locally in browser!");
+    }
+
+    function loadSavedData() {
+      const saved = localStorage.getItem('suro_boyo_lkm_data');
+      if (!saved) return;
+      try {
+        const data = JSON.parse(saved);
+        Object.keys(data).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            if (el.type === 'checkbox') {
+              el.checked = data[id];
+            } else {
+              el.value = data[id];
+            }
+          }
+        });
+
+        if (data['feedback_mode']) {
+          const radio = document.querySelector(`input[name="feedback_mode"][value="${data['feedback_mode']}"]`);
+          if (radio) {
+            radio.checked = true;
+            switchFeedbackMode(data['feedback_mode']);
+          }
+        }
+      } catch (e) {
+        console.error("Error loading saved data", e);
+      }
+    }
+
+    function showToast(msg, type = "success") {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastMsg.innerText = msg;
+      toastIcon.innerText = type === "warning" ? "⚠️" : "✅";
+      
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
