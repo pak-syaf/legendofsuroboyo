@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Worksheet (LKM) — Legend of Suro and Boyo Modern Story Writing</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- html2canvas for High-Res Social Media Card PNG Downloads -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <!-- Google Fonts: Inter & Comic-Style Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&family=Fredoka:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            comic: ['Fredoka', 'cursive', 'sans-serif'],
+            comicNeue: ['Comic Neue', 'cursive', 'sans-serif'],
+          },
+          colors: {
+            maroon: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              600: '#e11d48',
+              800: '#800000',
+              900: '#580000',
+              950: '#380000',
+            },
+            amberGold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    
+    .card-box {
+      transition: all 0.2s ease-in-out;
+    }
+
+    .comic-font {
+      font-family: 'Fredoka', cursive, sans-serif;
+    }
+
+    .comic-neue {
+      font-family: 'Comic Neue', cursive, sans-serif;
+    }
+
+    /* Classic Comic Strip Speech Bubble */
+    .comic-bubble {
+      position: relative;
+      background: #ffffff;
+      border: 2.5px solid #000000;
+      border-radius: 18px;
+      padding: 6px 10px;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.15);
+    }
+
+    /* Bubble tails */
+    .bubble-tail-left::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 18px;
+      border-width: 10px 8px 0;
+      border-style: solid;
+      border-color: #000000 transparent;
+      display: block;
+      width: 0;
+    }
+    .bubble-tail-left::before {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 20px;
+      border-width: 8px 6px 0;
+      border-style: solid;
+      border-color: #ffffff transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+    }
+
+    .bubble-tail-right::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 18px;
+      border-width: 10px 8px 0;
+      border-style: solid;
+      border-color: #000000 transparent;
+      display: block;
+      width: 0;
+    }
+    .bubble-tail-right::before {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      right: 20px;
+      border-width: 8px 6px 0;
+      border-style: solid;
+      border-color: #ffffff transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+      .card-box {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        break-inside: avoid;
+        margin-bottom: 1rem !important;
+      }
+      input, textarea, select {
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        resize: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+
+  <!-- TOP HEADER / BRANDING -->
+  <header class="bg-maroon-800 text-white shadow-md border-b-4 border-amberGold-500">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <!-- Lecturer Identity Badge -->
+        <div class="flex items-center gap-3 bg-maroon-900/80 p-2.5 pr-4 rounded-xl border border-amberGold-500/40 shadow-sm shrink-0">
+          <div class="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-amberGold-400 shadow shrink-0 bg-slate-800 flex items-center justify-center">
+            <img id="lecturer_img" src="yt.png" alt="Dr. Ahmad Syafi'i, M.Pd." class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/150x150/1e293b/ffffff?text=yt.png';">
+          </div>
+          <div>
+            <span class="block text-[10px] font-extrabold tracking-wider text-amber-300 uppercase">Course Lecturer</span>
+            <span class="block text-xs md:text-sm font-bold text-white leading-tight">Dr. Ahmad Syafi'i, M.Pd.</span>
+            <span class="block text-[10px] text-slate-200">STKIP Al Hikmah Surabaya</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-300 mb-1">
+            <span>STKIP Al Hikmah Surabaya</span>
+            <span>•</span>
+            <span>English Education Program</span>
+          </div>
+          <h1 class="text-xl md:text-2xl font-extrabold tracking-tight">Basic Written English (Code: KK0211302)</h1>
+          <p class="text-xs md:text-sm text-slate-200 mt-0.5">Microlearning-AI Model: The Legend of Suro and Boyo — Modern Story Writing</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions / Export Buttons -->
+      <div class="no-print flex items-center gap-2 flex-wrap sm:flex-nowrap">
+        <button onclick="saveProgress()" class="bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3 py-2 rounded-lg border border-white/20 transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+          Save Progress
+        </button>
+        <button onclick="exportToWord()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-2 rounded-lg transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          Download Word (.doc)
+        </button>
+        <button onclick="window.print()" class="bg-amberGold-500 hover:bg-amberGold-600 text-slate-900 text-xs font-bold px-3 py-2 rounded-lg transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          Save PDF / Print
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-5xl mx-auto px-4 mt-6">
+
+    <!-- Toast Notification Box -->
+    <div id="toast" class="no-print fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-lg shadow-xl text-xs font-medium hidden z-50 items-center gap-2 border border-slate-700">
+      <span id="toast-icon">✅</span>
+      <span id="toast-msg">Progress saved successfully!</span>
+    </div>
+
+    <!-- STUDENT METADATA CARD -->
+    <section class="card-box bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Student Identity & Session Info</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Student Name</label>
+          <input type="text" id="std_name" placeholder="Full Name" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Student ID (NIM)</label>
+          <input type="text" id="std_id" placeholder="e.g., 202601009" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Class / Session</label>
+          <input type="text" id="std_class" placeholder="e.g., Class 2026A" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Date</label>
+          <input type="date" id="std_date" oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800">
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 0: CHOOSE FEEDBACK MODE -->
+    <section class="card-box bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">0</span>
+          STEP 0 — CHOOSE YOUR FEEDBACK MODE
+        </h3>
+        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded font-medium">Mitigation Scenario</span>
+      </div>
+      <p class="text-xs text-slate-600 mb-4">
+        Select your learning scenario today. If AI servers or internet connections are down, switch to Peer or Offline Card mode without losing points!
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <!-- Option A -->
+        <label class="cursor-pointer border border-slate-200 rounded-xl p-3 hover:border-maroon-800 transition flex items-start gap-3 bg-slate-50 has-[:checked]:bg-maroon-50 has-[:checked]:border-maroon-800">
+          <input type="radio" name="feedback_mode" value="A" checked onchange="switchFeedbackMode('A')" class="mt-1 accent-maroon-800">
+          <div>
+            <span class="block text-xs font-bold text-slate-800">Option A: AI Feedback</span>
+            <span class="block text-[11px] text-slate-500 mt-0.5">Internet & ChatGPT / QuillBot available. Use automated micro-prompts.</span>
+          </div>
+        </label>
+
+        <!-- Option B -->
+        <label class="cursor-pointer border border-slate-200 rounded-xl p-3 hover:border-maroon-800 transition flex items-start gap-3 bg-slate-50 has-[:checked]:bg-maroon-50 has-[:checked]:border-maroon-800">
+          <input type="radio" name="feedback_mode" value="B" onchange="switchFeedbackMode('B')" class="mt-1 accent-maroon-800">
+          <div>
+            <span class="block text-xs font-bold text-slate-800">Option B: Peer Feedback</span>
+            <span class="block text-[11px] text-slate-500 mt-0.5">No internet/AI access. Work with a nearby classmate using guiding rubrics.</span>
+          </div>
+        </label>
+
+        <!-- Option C -->
+        <label class="cursor-pointer border border-slate-200 rounded-xl p-3 hover:border-maroon-800 transition flex items-start gap-3 bg-slate-50 has-[:checked]:bg-maroon-50 has-[:checked]:border-maroon-800">
+          <input type="radio" name="feedback_mode" value="C" onchange="switchFeedbackMode('C')" class="mt-1 accent-maroon-800">
+          <div>
+            <span class="block text-xs font-bold text-slate-800">Option C: Offline Strategy Cards</span>
+            <span class="block text-[11px] text-slate-500 mt-0.5">No internet and no partner. Use structured offline Suro & Boyo writing cards.</span>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <!-- STEP 1: WARM-UP (ACTIVATE) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">1</span>
+          STEP 1 — WARM-UP (ACTIVATE)
+        </h3>
+        <span class="text-xs font-semibold text-slate-500">Schema Activation & Context</span>
+      </div>
+
+      <!-- VISUAL MEDIA & BRIDGING SECTION -->
+      <div class="mb-5 grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        
+        <!-- LEFT: FOLKTALE BACKGROUND VIDEO -->
+        <div class="flex flex-col justify-between bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 011.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                1. Folktale Background Video
+              </span>
+              <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">
+                In-Tab Direct Video
+              </span>
+            </div>
+
+            <div class="relative w-full rounded-lg overflow-hidden border border-slate-300 shadow-sm bg-black aspect-video flex items-center justify-center">
+              <video id="video_folktale" controls playsinline preload="auto" class="w-full h-full object-contain">
+                <source src="0ce4cea969bf47aeb175649d97e53d49.mp4" type="video/mp4">
+                <source src="folktale.mp4" type="video/mp4">
+                <source src="suro_boyo_folktale.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+
+            <div class="mt-2.5 space-y-1">
+              <span class="text-[11px] font-bold text-slate-700 block">Key Folktale Plot Moments:</span>
+              <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-600">
+                <button onclick="playVideoAt('folktale', 1)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:01 • Sura in Sea</button>
+                <button onclick="playVideoAt('folktale', 5)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:05 • Epic Battle</button>
+                <button onclick="playVideoAt('folktale', 11)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:11 • Divide Territory</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3 bg-amber-50 p-2 rounded border border-amber-200 text-[11px] text-amber-900">
+            <strong>Traditional Context:</strong> Sura (shark) and Baya (crocodile) fight fiercely over prey until they agree to divide their hunting territory between sea and land.
+          </div>
+        </div>
+
+        <!-- RIGHT: MODERN CONCEPT VIDEO -->
+        <div class="flex flex-col justify-between bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 00-2 2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                2. Modern Concept Video
+              </span>
+              <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">
+                In-Tab Direct Video
+              </span>
+            </div>
+
+            <div class="relative w-full rounded-lg overflow-hidden border border-slate-300 shadow-sm bg-black aspect-video flex items-center justify-center">
+              <video id="video_modern" controls playsinline preload="auto" class="w-full h-full object-contain">
+                <source src="d3baac23aa72447c960733f8430a7277.mp4" type="video/mp4">
+                <source src="modern.mp4" type="video/mp4">
+                <source src="suro_boyo_modern.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+
+            <div class="mt-2.5 space-y-1">
+              <span class="text-[11px] font-bold text-slate-700 block">Modern Story Plot Moments:</span>
+              <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-600">
+                <button onclick="playVideoAt('modern', 2)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:02 • Speeches</button>
+                <button onclick="playVideoAt('modern', 10)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:10 • Tied Votes!</button>
+                <button onclick="playVideoAt('modern', 13)" class="bg-slate-100 hover:bg-slate-200 p-1 rounded text-center truncate transition">0:13 • Handshake</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3 bg-blue-50 p-2 rounded border border-blue-200 text-[11px] text-blue-900">
+            <strong>Modern Bridge:</strong> Sura and Baya are adapted into high school classmates competing in a Student Council election. After a tied vote, they learn to share leadership!
+          </div>
+        </div>
+
+      </div>
+
+      <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+        Imagine Sura and Baya as students at school today. What kind of school conflict could happen between two strong, stubborn classmates?
+      </label>
+      <textarea id="step1_ideas" rows="3" placeholder="e.g., Sura and Baya were competing in the Student Council presidential election. Both refused to step down or share campaign promises until a tied vote forced them to become co-presidents..." oninput="autoSaveData()" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-maroon-800"></textarea>
+    </section>
+
+    <!-- STEP 2: STORY PLANNING & FIRST DRAFT (EXPLORE) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">2</span>
+          STEP 2 — STORY PLANNING & QUICK FIRST DRAFT (EXPLORE)
+        </h3>
+        <span class="text-xs font-semibold text-slate-500">Narrative Structure</span>
+      </div>
+
+      <!-- STORY PLANNER MATRIX -->
+      <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">2A. Story Plan Matrix</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">1. Orientation (Who, where, when?)</label>
+          <input type="text" id="plan_orientation" placeholder="e.g., Sura and Baya were top students in Class 10A last semester." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">2. Complication (What is the conflict?)</label>
+          <input type="text" id="plan_complication" placeholder="e.g., They both wanted the sole leadership role for the annual science project." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">3. Resolution (How is it resolved?)</label>
+          <input type="text" id="plan_resolution" placeholder="e.g., Their teacher made them co-captains, forcing them to divide responsibilities." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <label class="block text-xs font-bold text-maroon-800 mb-1">4. Target Character Value</label>
+          <input type="text" id="plan_value" placeholder="e.g., Respect, Empathy, Teamwork, Honesty" oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+        </div>
+      </div>
+
+      <!-- FIRST DRAFT SENTENCE BUILDER -->
+      <div class="flex items-center justify-between mb-2">
+        <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">2B. Quick Write: My First Draft (5–7 Sentences)</h4>
+        <span class="text-[11px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Use simple past tense & temporal conjunctions</span>
+      </div>
+      
+      <div class="space-y-2 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">1.</span>
+          <input type="text" id="d1" placeholder="Sentence 1: Set the scene and introduce Sura & Baya..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">2.</span>
+          <input type="text" id="d2" placeholder="Sentence 2: Introduce the background condition..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">3.</span>
+          <input type="text" id="d3" placeholder="Sentence 3: Introduce the rising complication (Suddenly / One day)..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">4.</span>
+          <input type="text" id="d4" placeholder="Sentence 4: Describe the intense climax or argument..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">5.</span>
+          <input type="text" id="d5" placeholder="Sentence 5: Show the turning point or realization..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">6.</span>
+          <input type="text" id="d6" placeholder="Sentence 6: Explain the resolution (After that / Eventually)..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">7.</span>
+          <input type="text" id="d7" placeholder="Sentence 7 (Optional): Closing thought or moral lesson..." oninput="compileDraftParagraph()" class="draft-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+      </div>
+
+      <!-- AUTOMATED FIRST DRAFT PARAGRAPH COMPILATION BOX -->
+      <div class="bg-amber-50 border border-amber-300 rounded-xl p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-amber-900 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 02-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            Automated Draft Compilation (Paragraph View)
+          </span>
+          <div class="flex items-center gap-3">
+            <span id="draft_word_count" class="text-[11px] font-semibold text-amber-800">0 words</span>
+            <button onclick="copyToClipboard('compiled_draft_text', 'First draft copied!')" class="no-print text-[11px] bg-amber-600 hover:bg-amber-700 text-white font-medium px-2.5 py-1 rounded transition">
+              Copy Draft Paragraph
+            </button>
+          </div>
+        </div>
+        <p id="compiled_draft_text" class="text-xs text-slate-800 leading-relaxed italic bg-white p-3 rounded border border-amber-200 min-h-[50px]">
+          Start typing your sentences above to see your compiled first draft paragraph appear here automatically...
+        </p>
+
+        <!-- STEP 2 AUTOMATED GRAMMAR & VOCABULARY CHECKER (5-CRITERIA RUBRIC) -->
+        <div class="mt-4 pt-3 border-t border-amber-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-amber-900 flex items-center gap-1">
+              <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Step 2 First Draft Diagnostic: Rubrik Penilaian Analitik (Skala 0–100)
+            </span>
+            <button onclick="runGrammarCheck('draft')" class="no-print bg-amber-700 hover:bg-amber-800 text-white text-[11px] font-semibold px-3 py-1 rounded transition flex items-center gap-1">
+              🔍 Run First Draft Rubric Diagnostic
+            </button>
+          </div>
+
+          <div id="draft_grammar_report" class="hidden bg-white p-3 rounded-lg border border-amber-200 text-xs space-y-2">
+            <!-- Dynamic Report Content Inserted via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: GETTING FEEDBACK (INTERPRET) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">3</span>
+          STEP 3 — GETTING FEEDBACK (INTERPRET)
+        </h3>
+        <span id="active_mode_badge" class="text-xs font-bold bg-maroon-100 text-maroon-800 px-2.5 py-0.5 rounded">
+          Active: Option A (AI Feedback)
+        </span>
+      </div>
+
+      <!-- SECTION 3A: AI FEEDBACK -->
+      <div id="section_3a" class="space-y-4">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <h4 class="text-xs font-bold text-slate-800 mb-1">3A. Automated AI Feedback Simulator</h4>
+          <p class="text-xs text-slate-600 mb-3">
+            Click the simulator button below to generate instant writing feedback on your draft paragraph, or paste your prompt into ChatGPT/QuillBot.
+          </p>
+          
+          <button onclick="runAISimulator()" class="no-print bg-maroon-800 hover:bg-maroon-900 text-white text-xs font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2 shadow-sm mb-3">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Generate AI Feedback Analysis
+          </button>
+
+          <div id="ai_suggestions_container" class="space-y-2">
+            <label class="block text-xs font-semibold text-slate-700">Record AI Suggestions & Action Plan (Check ✓ to use, ✗ to skip):</label>
+            
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="ai_chk1" onchange="autoSaveData()" class="accent-maroon-800 w-4 h-4">
+              <input type="text" id="ai_sug1" placeholder="Suggestion 1: e.g., Use dialogue contractions (I'm, didn't) to sound natural." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded px-3 py-1.5 focus:ring-1 focus:ring-maroon-800">
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="ai_chk2" onchange="autoSaveData()" class="accent-maroon-800 w-4 h-4">
+              <input type="text" id="ai_sug2" placeholder="Suggestion 2: e.g., Add 'Eventually' as a temporal transition before the resolution." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded px-3 py-1.5 focus:ring-1 focus:ring-maroon-800">
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="ai_chk3" onchange="autoSaveData()" class="accent-maroon-800 w-4 h-4">
+              <input type="text" id="ai_sug3" placeholder="Suggestion 3: e.g., Emphasize the character value of mutual respect in sentence 7." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded px-3 py-1.5 focus:ring-1 focus:ring-maroon-800">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3B: PEER FEEDBACK -->
+      <div id="section_3b" class="space-y-4 hidden">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs font-bold text-slate-800">3B. Structured Peer Feedback Matrix</h4>
+            <div class="flex items-center gap-2 text-xs">
+              <span class="font-semibold text-slate-700">Partner's Name:</span>
+              <input type="text" id="peer_name" placeholder="Classmate Name" oninput="autoSaveData()" class="bg-white border border-slate-300 rounded px-2 py-1 text-xs">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Guiding Q1: How can dialogue & tone between characters be improved?</label>
+            <textarea id="peer_q1" rows="2" placeholder="Partner feedback on dialogue..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Guiding Q2: How can the ending and moral value be made more meaningful?</label>
+            <textarea id="peer_q2" rows="2" placeholder="Partner feedback on resolution..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Guiding Q3: Is the sequence of events (Orientation → Complication → Resolution) clear?</label>
+            <textarea id="peer_q3" rows="2" placeholder="Partner feedback on story structure..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3C: OFFLINE CARDS -->
+      <div id="section_3c" class="space-y-4 hidden">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <h4 class="text-xs font-bold text-slate-800 mb-2">3C. Interactive Offline Suro & Boyo Strategy Cards</h4>
+          <p class="text-xs text-slate-600 mb-3">Click on strategy cards to inspect tips and apply them to your notes below:</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 1 — Dialogue & Tone</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>Use contractions (I'm, didn't) to sound natural.</li>
+                <li>Add quick reactions: <em>Sura sighed, "Fine, let's divide it."</em></li>
+                <li>Show feelings through action rather than telling ("I am mad").</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 2 — Setting & Sensory Details</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>Add one vivid sensory detail (e.g., tense silence, crowded hall).</li>
+                <li>Use specific descriptors instead of generic words.</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 3 — Temporal Conjunctions</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>Start key sentences with time markers: <em>Suddenly, After that, Eventually</em>.</li>
+                <li>Avoid repeating "then" continuously.</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold text-maroon-800 block mb-1">CARD 4 — Meaningful Resolution</span>
+              <ul class="text-[11px] text-slate-600 space-y-1 list-disc pl-4">
+                <li>End with what the characters learned about each other.</li>
+                <li>Connect the resolution directly to character growth and respect.</li>
+              </ul>
+            </div>
+          </div>
+
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Notes on Selected Offline Card Strategies Applied:</label>
+          <textarea id="offline_card_notes" rows="2" placeholder="Describe which card tips you selected and how they will improve your revision..." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: REVISION & REFLECTION (CREATE) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">4</span>
+          STEP 4 — REVISION & REFLECTION (CREATE)
+        </h3>
+        <span class="text-xs font-semibold text-slate-500">Final Narrative Polish</span>
+      </div>
+
+      <!-- REVISED STORY SENTENCE INPUTS -->
+      <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">4A. My Revised / Final Story (5–7 Sentences)</h4>
+      <div class="space-y-2 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">1.</span>
+          <input type="text" id="r1" placeholder="Revised Sentence 1..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">2.</span>
+          <input type="text" id="r2" placeholder="Revised Sentence 2..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">3.</span>
+          <input type="text" id="r3" placeholder="Revised Sentence 3..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">4.</span>
+          <input type="text" id="r4" placeholder="Revised Sentence 4..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">5.</span>
+          <input type="text" id="r5" placeholder="Revised Sentence 5..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">6.</span>
+          <input type="text" id="r6" placeholder="Revised Sentence 6..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 w-5">7.</span>
+          <input type="text" id="r7" placeholder="Revised Sentence 7 (Optional)..." oninput="compileRevisedParagraph()" class="revised-input w-full text-xs bg-slate-50 border border-slate-300 rounded px-3 py-2 focus:bg-white focus:ring-1 focus:ring-maroon-800">
+        </div>
+      </div>
+
+      <!-- AUTOMATED COMPILED REVISED PARAGRAPH BOX -->
+      <div class="bg-maroon-50 border border-maroon-200 rounded-xl p-4 mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-maroon-900 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Automated Final Compiled Story Paragraph
+          </span>
+          <div class="flex items-center gap-3">
+            <span id="revised_word_count" class="text-[11px] font-semibold text-maroon-800">0 words</span>
+            <button onclick="copyToClipboard('compiled_revised_text', 'Final story copied!')" class="no-print text-[11px] bg-maroon-800 hover:bg-maroon-900 text-white font-medium px-2.5 py-1 rounded transition">
+              Copy Final Paragraph
+            </button>
+          </div>
+        </div>
+        <p id="compiled_revised_text" class="text-xs text-slate-800 leading-relaxed font-normal bg-white p-3.5 rounded border border-maroon-200 min-h-[60px]">
+          Fill in your revised sentences above to generate your final polished paragraph...
+        </p>
+
+        <!-- STEP 4 AUTOMATED GRAMMAR & VOCABULARY RE-CHECKER (5-CRITERIA RUBRIC) -->
+        <div class="mt-4 pt-3 border-t border-maroon-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-maroon-900 flex items-center gap-1">
+              <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Step 4 Final Draft Diagnostic: Rubrik Penilaian Analitik (Skala 0–100)
+            </span>
+            <button onclick="runGrammarCheck('revised')" class="no-print bg-maroon-800 hover:bg-maroon-900 text-white text-[11px] font-semibold px-3 py-1 rounded transition flex items-center gap-1">
+              ✨ Run Final Paragraph Rubric Diagnostic
+            </button>
+          </div>
+
+          <div id="revised_grammar_report" class="hidden bg-white p-3 rounded-lg border border-maroon-200 text-xs space-y-2">
+            <!-- Dynamic Final Report Content Inserted via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- MANDATORY ACKNOWLEDGEMENT STATEMENT -->
+      <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <label class="block text-xs font-bold text-slate-800 mb-1">
+          Feedback Acknowledgement Statement (Required):
+        </label>
+        <p class="text-[11px] text-slate-500 mb-2">Write one short sentence acknowledging what you revised based on AI, peer, or card feedback.</p>
+        <input type="text" id="feedback_ack" placeholder="e.g., I revised the dialogue in sentence 4 to include contractions based on AI feedback." oninput="autoSaveData()" class="w-full text-xs bg-white border border-slate-300 rounded p-2 focus:ring-1 focus:ring-maroon-800">
+      </div>
+
+      <!-- AUTOMATED PLAGIARISM & AI INTEGRITY DETECTOR MENU -->
+      <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <div class="flex items-center justify-between mb-2">
+          <label class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-maroon-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            4B. Automated Plagiarism & AI Integrity Detector
+          </label>
+          <span id="integrity_status_badge" class="text-[10px] font-bold bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded">
+            Not Verified
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-500 mb-3">
+          Run the integrity verification on your final story. Requirements: <strong>Max 20% Plagiarism Similarity Rate</strong> and <strong>Max 15% AI Detection Rate</strong>.
+        </p>
+
+        <button onclick="runIntegrityCheck()" class="no-print bg-maroon-800 hover:bg-maroon-900 text-white text-xs font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2 shadow-sm mb-3">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Run Integrity Check (Plagiarism & AI Detector)
+        </button>
+
+        <div id="integrity_results" class="hidden bg-white p-3.5 rounded-lg border border-slate-200 space-y-3 text-xs">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Plagiarism Meter -->
+            <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-bold text-slate-700 text-[11px]">Plagiarism Similarity Index</span>
+                <span id="plagiarism_score_text" class="font-extrabold text-xs text-slate-800">0%</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden mb-1.5">
+                <div id="plagiarism_bar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-slate-500">
+                <span>Target: ≤ 20%</span>
+                <span id="plagiarism_flag" class="font-bold text-emerald-600">PASSED</span>
+              </div>
+            </div>
+
+            <!-- AI Detector Meter -->
+            <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-bold text-slate-700 text-[11px]">AI Generated Content Score</span>
+                <span id="ai_score_text" class="font-extrabold text-xs text-slate-800">0%</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden mb-1.5">
+                <div id="ai_bar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-slate-500">
+                <span>Target: ≤ 15%</span>
+                <span id="ai_flag" class="font-bold text-emerald-600">PASSED</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="integrity_feedback_msg" class="p-2.5 rounded text-[11px] bg-emerald-50 border border-emerald-200 text-emerald-900">
+            <!-- Dynamic feedback message inserted via JS -->
+          </div>
+
+          <!-- DETAILED REVISION BREAKDOWN DESCRIPTION PANEL -->
+          <div id="integrity_detailed_breakdown" class="mt-3 pt-3 border-t border-slate-200 space-y-3">
+            <!-- Detailed itemized plagiarism & AI analysis inserted via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- REFLECTION QUESTIONS -->
+      <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">4C. Reflection Questions</h4>
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">1. What character value (empathy, responsibility, honesty, teamwork) is highlighted in your story?</label>
+          <textarea id="ref_q1" rows="2" placeholder="Explain the core moral or character value..." oninput="autoSaveData()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded p-2 focus:bg-white focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">2. Which feedback mode did you use today (AI / Peer / Offline Card), and how did it help you revise?</label>
+          <textarea id="ref_q2" rows="2" placeholder="Reflect on the feedback process..." oninput="autoSaveData()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded p-2 focus:bg-white focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">3. What did you learn about getting feedback and revising responsibly — with or without AI?</label>
+          <textarea id="ref_q3" rows="2" placeholder="Reflect on digital literacy and critical ownership..." oninput="autoSaveData()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded p-2 focus:bg-white focus:ring-1 focus:ring-maroon-800"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5: AUTOMATED EVALUATION & SCORING PORTAL -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-maroon-800 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-xs">5</span>
+          STEP 5 — SUBMISSION & AUTOMATED SCORING PORTAL
+        </h3>
+        <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded">
+          Passing Score: 78–80 (Grade B)
+        </span>
+      </div>
+
+      <!-- RUBRIC REFERENCE ACCORDION -->
+      <details class="mb-5 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+        <summary class="p-3.5 text-xs font-bold text-maroon-800 cursor-pointer bg-slate-100/80 hover:bg-slate-100 flex items-center justify-between select-none">
+          <span>📋 View Analytical Scoring Rubric Details (Skala 0–100)</span>
+          <span class="text-[10px] text-slate-500 font-normal">Click to expand/collapse</span>
+        </summary>
+        <div class="p-4 text-xs space-y-3 bg-white border-t border-slate-200">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+            <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
+              <span class="font-bold text-maroon-800 block mb-1">1. Content (Isi) — 30%</span>
+              <ul class="text-[10px] text-slate-600 space-y-1">
+                <li><strong class="text-emerald-700">27–30:</strong> Excellent/Very Good (Plot kuat, orisinal, detail)</li>
+                <li><strong class="text-blue-700">22–26:</strong> Good/Average (Jernih, konflik kurang terpapar)</li>
+                <li><strong class="text-amber-700">17–21:</strong> Fair/Poor (Terbatas, klise/loncat)</li>
+                <li><strong class="text-red-700">0–16:</strong> Inadequate (Tidak runtut/relevan)</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
+              <span class="font-bold text-maroon-800 block mb-1">2. Organization — 20%</span>
+              <ul class="text-[10px] text-slate-600 space-y-1">
+                <li><strong class="text-emerald-700">18–20:</strong> Excellent (Kronologis logis, transisi halus)</li>
+                <li><strong class="text-blue-700">14–17:</strong> Good (Lengkap, beberapa transisi kaku)</li>
+                <li><strong class="text-amber-700">10–13:</strong> Fair (Kurang konsisten, bingung latar)</li>
+                <li><strong class="text-red-700">0–9:</strong> Inadequate (Kacau/tidak terstruktur)</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
+              <span class="font-bold text-maroon-800 block mb-1">3. Grammar — 20%</span>
+              <ul class="text-[10px] text-slate-600 space-y-1">
+                <li><strong class="text-emerald-700">18–20:</strong> Excellent (Past tenses & majemuk akurat)</li>
+                <li><strong class="text-blue-700">14–17:</strong> Good (Variatif, kesalahan minor)</li>
+                <li><strong class="text-amber-700">10–13:</strong> Fair (Sering salah structure/verb)</li>
+                <li><strong class="text-red-700">0–9:</strong> Inadequate (Fatal & sulit dipahami)</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
+              <span class="font-bold text-maroon-800 block mb-1">4. Vocabulary — 15%</span>
+              <ul class="text-[10px] text-slate-600 space-y-1">
+                <li><strong class="text-emerald-700">14–15:</strong> Excellent (Sangat kaya, action verbs, show don't tell)</li>
+                <li><strong class="text-blue-700">11–13:</strong> Good (Tepat, variasi cukup)</li>
+                <li><strong class="text-amber-700">8–10:</strong> Fair (Dasar, monoton, hambar)</li>
+                <li><strong class="text-red-700">0–7:</strong> Inadequate (Terjemahan harfiah/buruk)</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
+              <span class="font-bold text-maroon-800 block mb-1">5. Mechanics — 15%</span>
+              <ul class="text-[10px] text-slate-600 space-y-1">
+                <li><strong class="text-emerald-700">14–15:</strong> Excellent (Ejaan, tanda baca & kapital bersih)</li>
+                <li><strong class="text-blue-700">11–13:</strong> Good (Beberapa kesalahan kecil)</li>
+                <li><strong class="text-amber-700">8–10:</strong> Fair (Sering salah ejaan/tanda baca)</li>
+                <li><strong class="text-red-700">0–7:</strong> Inadequate (Didominasi kesalahan mekanik)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <p class="text-xs text-slate-600 mb-4">
+        Click below to run automated rubric evaluation on your completed LKM. Your final submission must meet or exceed the minimum score of <strong>78 (Grade B)</strong>.
+      </p>
+
+      <div class="no-print mb-6 flex flex-wrap items-center gap-3">
+        <button onclick="evaluateWorksheet()" class="bg-amberGold-500 hover:bg-amberGold-600 text-slate-900 font-bold text-xs px-5 py-2.5 rounded-lg shadow-md transition flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Evaluate & Calculate Score
+        </button>
+      </div>
+
+      <!-- SCORING SCORECARD DASHBOARD (5-CRITERIA RUBRIC) -->
+      <div id="scorecard_result" class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-4 text-center">
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">1. Content (30%)</span>
+            <span id="score_sec1" class="text-lg font-black text-slate-800">0 / 30</span>
+            <span id="level_sec1" class="block text-[9px] text-slate-400 font-semibold truncate">-</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">2. Organization (20%)</span>
+            <span id="score_sec2" class="text-lg font-black text-slate-800">0 / 20</span>
+            <span id="level_sec2" class="block text-[9px] text-slate-400 font-semibold truncate">-</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">3. Grammar (20%)</span>
+            <span id="score_sec3" class="text-lg font-black text-slate-800">0 / 20</span>
+            <span id="level_sec3" class="block text-[9px] text-slate-400 font-semibold truncate">-</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">4. Vocabulary (15%)</span>
+            <span id="score_sec4" class="text-lg font-black text-slate-800">0 / 15</span>
+            <span id="level_sec4" class="block text-[9px] text-slate-400 font-semibold truncate">-</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+            <span class="block text-[10px] font-bold text-slate-400 uppercase">5. Mechanics (15%)</span>
+            <span id="score_sec5" class="text-lg font-black text-slate-800">0 / 15</span>
+            <span id="level_sec5" class="block text-[9px] text-slate-400 font-semibold truncate">-</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between bg-white p-4 rounded-lg border border-slate-200 gap-4">
+          <div class="text-center sm:text-left">
+            <span class="text-xs text-slate-500 font-semibold block">Total Analytic Score</span>
+            <div class="flex items-baseline gap-2">
+              <span id="total_score" class="text-3xl font-black text-maroon-800">0</span>
+              <span class="text-xs text-slate-400 font-bold">/ 100 Points</span>
+            </div>
+          </div>
+
+          <div class="text-center sm:text-right">
+            <span class="text-xs text-slate-500 font-semibold block">Academic Status</span>
+            <span id="grade_badge" class="inline-block text-xs font-extrabold px-3 py-1 rounded-full bg-slate-200 text-slate-700 mt-1">
+              Not Evaluated
+            </span>
+          </div>
+        </div>
+
+        <!-- REVISION FEEDBACK NOTICE -->
+        <div id="evaluation_notice" class="mt-4 text-xs p-3 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
+          Click "Evaluate & Calculate Score" to check your worksheet submission readiness.
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 6: VISUAL INFOGRAPHIC & CARTOON COMIC GENERATOR (FOR SOCIAL MEDIA) -->
+    <section class="card-box bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+      <div class="flex items-center justify-between mb-3 border-b pb-2">
+        <h3 class="text-base font-bold text-maroon-800 flex items-center gap-2">
+          <span class="bg-amberGold-500 text-slate-900 rounded-full w-6 h-6 inline-flex items-center justify-center text-xs font-bold">6</span>
+          STEP 6 — CLASSIC SUNDAY COMIC STRIP GENERATOR (SURO & BOYO EDITION)
+        </h3>
+        <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded">
+          📸 Social Media Showcase
+        </span>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4">
+        Present your story in a classic <strong>6-Panel Newspaper Comic Strip Style</strong> (inspired by classic Sunday Comics). Post your finished comic on Instagram, TikTok, or WhatsApp status!
+      </p>
+
+      <!-- VISUAL GENERATOR CONTROLS -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
+          <div class="flex items-center gap-2">
+            <button onclick="autoPopulateVisuals()" class="no-print bg-maroon-800 hover:bg-maroon-900 text-white text-xs font-semibold px-3.5 py-2 rounded-lg transition flex items-center gap-1.5 shadow-sm">
+              <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              ✨ Auto-Populate from Step 4 Story
+            </button>
+            <span class="text-[11px] text-slate-500 hidden sm:inline">Converts your story into a comic strip</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <div>
+              <label class="text-xs font-bold text-slate-700 mr-1">Strip Style:</label>
+              <select id="visual_theme_select" onchange="updateVisualTheme()" class="text-xs bg-white border border-slate-300 rounded px-2.5 py-1.5 focus:ring-1 focus:ring-maroon-800 font-medium">
+                <option value="classic_paper">Classic Sunday Paper (Sky Blue)</option>
+                <option value="warm_vintage">Warm Vintage Newsprint</option>
+                <option value="pastel_pop">Bright Pastel Pop (Pink/Mint)</option>
+                <option value="retro_noir">Retro Noir (Black & White)</option>
+                <option value="cyber_neon">Cyber Neon Webtoon (Dark Mode)</option>
+                <option value="kawaii_sunset">Kawaii Sunset (Warm Gold)</option>
+                <option value="manga_mono">Manga Monochrome (Ink Style)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-xs font-bold text-slate-700 mr-1">Format / Ratio:</label>
+              <select id="aspect_ratio_select" onchange="updateAspectRatio()" class="text-xs bg-white border border-slate-300 rounded px-2.5 py-1.5 focus:ring-1 focus:ring-maroon-800 font-medium">
+                <option value="story_9_16">📱 IG Story / TikTok / WA Status (9:16 Vertical)</option>
+                <option value="feed_4_5">📸 IG Feed Portrait (4:5 Ratio)</option>
+                <option value="square_1_1">🟦 IG Post / FB Square (1:1 Ratio)</option>
+                <option value="classic_banner" selected>📰 Classic Newspaper Strip (Banner / 16:9)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 PANEL CONTENT EDITORS -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          
+          <!-- Panel 1 -->
+          <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-2">
+            <div class="flex items-center justify-between border-b pb-1">
+              <span class="text-xs font-bold text-maroon-800">Panel 1: Orientation</span>
+              <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono">Latar</span>
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Caption (Top Left):</label>
+              <input type="text" id="p1_caption" placeholder="One sunny morning at school..." oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Sura Dialogue:</label>
+              <input type="text" id="p1_sura" placeholder="I've decided to run for President!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Baya Dialogue:</label>
+              <input type="text" id="p1_baya" placeholder="Good luck! But I will win!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+          </div>
+
+          <!-- Panel 2 -->
+          <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-2">
+            <div class="flex items-center justify-between border-b pb-1">
+              <span class="text-xs font-bold text-maroon-800">Panel 2: Campaign</span>
+              <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono">Persaingan</span>
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Caption:</label>
+              <input type="text" id="p2_caption" placeholder="During campaign week..." oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Sura Dialogue:</label>
+              <input type="text" id="p2_sura" placeholder="My academic program is best!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Baya Dialogue:</label>
+              <input type="text" id="p2_baya" placeholder="My sports plan is stronger!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+          </div>
+
+          <!-- Panel 3 -->
+          <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-2">
+            <div class="flex items-center justify-between border-b pb-1">
+              <span class="text-xs font-bold text-maroon-800">Panel 3: Conflict</span>
+              <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono">Konflik</span>
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Caption:</label>
+              <input type="text" id="p3_caption" placeholder="Election day arrived..." oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Sura Dialogue:</label>
+              <input type="text" id="p3_sura" placeholder="Why are the votes so close?" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Baya Dialogue:</label>
+              <input type="text" id="p3_baya" placeholder="Neither of us will back down!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+          </div>
+
+          <!-- Panel 4 -->
+          <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-2">
+            <div class="flex items-center justify-between border-b pb-1">
+              <span class="text-xs font-bold text-maroon-800">Panel 4: Climax</span>
+              <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono">Klimaks</span>
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Caption:</label>
+              <input type="text" id="p4_caption" placeholder="Tied votes! SPLASH!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Sura Dialogue:</label>
+              <input type="text" id="p4_sura" placeholder="A tied vote? Now what?!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Baya Dialogue:</label>
+              <input type="text" id="p4_baya" placeholder="We can't keep arguing forever!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+          </div>
+
+          <!-- Panel 5 -->
+          <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-2">
+            <div class="flex items-center justify-between border-b pb-1">
+              <span class="text-xs font-bold text-maroon-800">Panel 5: Turning Point</span>
+              <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono">Solusi</span>
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Caption:</label>
+              <input type="text" id="p5_caption" placeholder="After thoughtful discussion..." oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Sura Dialogue:</label>
+              <input type="text" id="p5_sura" placeholder="What if we share presidency?" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Baya Dialogue:</label>
+              <input type="text" id="p5_baya" placeholder="You handle academics, I handle events!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+          </div>
+
+          <!-- Panel 6 -->
+          <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-2">
+            <div class="flex items-center justify-between border-b pb-1">
+              <span class="text-xs font-bold text-maroon-800">Panel 6: Moral Lesson</span>
+              <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono">Pesan Moral</span>
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Caption (Bottom):</label>
+              <input type="text" id="p6_caption" placeholder="Co-presidents for the win!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Sura Dialogue:</label>
+              <input type="text" id="p6_sura" placeholder="Teamwork beats rivalry!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Baya Dialogue:</label>
+              <input type="text" id="p6_baya" placeholder="We are better together!" oninput="updateVisualCard()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded px-2 py-1">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- LIVE CARTOON COMIC STRIP CANVAS (SUNDAY COMICS STYLE) -->
+      <div class="mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-slate-800 flex items-center gap-1">
+            <span>🖼️</span> Suro & Boyo Comic Strip Preview (Ready for Social Media Export)
+          </span>
+          <span id="ratio_badge" class="text-[10px] text-maroon-800 font-bold bg-maroon-100 px-2 py-0.5 rounded">
+            Format: Classic Newspaper Banner (16:9)
+          </span>
+        </div>
+
+        <!-- MAIN CONTAINER FOR PRINT & CANVAS CONVERSION -->
+        <div id="social_preview_card" class="bg-white p-5 rounded-lg border-4 border-black shadow-2xl relative overflow-hidden text-black transition-all max-w-4xl mx-auto" style="background-color: #ffffff;">
+          
+          <!-- MAIN COMIC STRIP HEADER TITLE (BOLD ALL CAPS) -->
+          <div class="text-center border-b-4 border-black pb-3 mb-4">
+            <h2 id="card_story_title" class="text-2xl md:text-3xl font-black comic-neue uppercase tracking-widest text-black">
+              SURA AND BAYA'S ELECTION STORY
+            </h2>
+            <div class="flex items-center justify-center gap-3 text-xs font-bold comic-neue mt-1 text-slate-800">
+              <span id="card_student_author">By Student Writer • STKIP Al Hikmah Surabaya</span>
+              <span>•</span>
+              <span id="card_value_tag" class="bg-amber-300 border border-black px-2 py-0.5 rounded text-[11px] font-black uppercase">Moral Value: Respect</span>
+            </div>
+          </div>
+
+          <!-- 6 PANEL COMIC GRID -->
+          <div id="comic_panels_grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            
+            <!-- PANEL 1 -->
+            <div class="comic-panel-box border-3 border-black bg-[#9be2ff] relative min-h-[220px] rounded flex flex-col justify-between overflow-hidden shadow-[3px_3px_0px_#000]" style="border: 3px solid #000;">
+              <span id="card_p1_cap_txt" class="comic-caption-box bg-white border-b-2 border-r-2 border-black px-2 py-0.5 text-[11px] font-bold comic-neue absolute top-0 left-0 z-20">One sunny morning...</span>
+              
+              <!-- Speech Bubbles -->
+              <div class="p-2.5 pt-7 space-y-2 z-10">
+                <div id="card_p1_sura_box" class="comic-bubble bubble-tail-left max-w-[85%]">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p1_sura_txt">"I've decided to run for President!"</span>
+                </div>
+                <div id="card_p1_baya_box" class="comic-bubble bubble-tail-right ml-auto max-w-[85%] bg-amber-50">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p1_baya_txt">"Good luck! But I will win!"</span>
+                </div>
+              </div>
+
+              <!-- Character Illustration & Grass Floor -->
+              <div class="comic-floor-box relative w-full h-16 mt-auto bg-[#84ce43] border-t-2 border-black flex items-end justify-between px-6 pb-1">
+                <!-- Sura SVG Avatar (Shark Student) -->
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M20,110 C20,60 40,20 60,20 C80,20 85,60 85,110 Z" fill="#475569" stroke="#000" stroke-width="4"/>
+                    <path d="M20,50 C5,40 5,65 20,70 Z" fill="#334155" stroke="#000" stroke-width="4"/>
+                    <path d="M35,110 C35,70 50,45 65,45 C75,45 75,70 75,110 Z" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="60" cy="40" r="7" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="62" cy="40" r="3" fill="#000000"/>
+                    <path d="M65,55 L80,55 M70,55 L70,60 M75,55 L75,60" stroke="#000" stroke-width="3"/>
+                  </svg>
+                </div>
+
+                <!-- Baya SVG Avatar (Crocodile Student) -->
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M15,110 C15,60 25,20 50,20 C75,20 85,60 85,110 Z" fill="#15803d" stroke="#000" stroke-width="4"/>
+                    <path d="M80,80 C95,75 95,100 85,110 Z" fill="#166534" stroke="#000" stroke-width="4"/>
+                    <path d="M25,110 C25,70 40,45 55,45 C65,45 65,70 65,110 Z" fill="#fef08a" stroke="#000" stroke-width="3"/>
+                    <circle cx="35" cy="35" r="8" fill="#15803d" stroke="#000" stroke-width="3"/>
+                    <circle cx="35" cy="35" r="5" fill="#ffffff" stroke="#000" stroke-width="2"/>
+                    <circle cx="34" cy="35" r="2" fill="#000000"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 2 -->
+            <div class="comic-panel-box border-3 border-black bg-[#9be2ff] relative min-h-[220px] rounded flex flex-col justify-between overflow-hidden shadow-[3px_3px_0px_#000]" style="border: 3px solid #000;">
+              <span id="card_p2_cap_txt" class="comic-caption-box bg-white border-b-2 border-r-2 border-black px-2 py-0.5 text-[11px] font-bold comic-neue absolute top-0 left-0 z-20">During campaign week...</span>
+              
+              <!-- Speech Bubbles -->
+              <div class="p-2.5 pt-7 space-y-2 z-10">
+                <div id="card_p2_sura_box" class="comic-bubble bubble-tail-left max-w-[85%]">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p2_sura_txt">"My academic program is best!"</span>
+                </div>
+                <div id="card_p2_baya_box" class="comic-bubble bubble-tail-right ml-auto max-w-[85%] bg-amber-50">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p2_baya_txt">"My sports plan is stronger!"</span>
+                </div>
+              </div>
+
+              <!-- Floor & Avatars -->
+              <div class="comic-floor-box relative w-full h-16 mt-auto bg-[#84ce43] border-t-2 border-black flex items-end justify-between px-6 pb-1">
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M20,110 C20,60 40,20 60,20 C80,20 85,60 85,110 Z" fill="#475569" stroke="#000" stroke-width="4"/>
+                    <circle cx="60" cy="38" r="7" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="62" cy="38" r="3" fill="#000000"/>
+                  </svg>
+                </div>
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M15,110 C15,60 25,20 50,20 C75,20 85,60 85,110 Z" fill="#15803d" stroke="#000" stroke-width="4"/>
+                    <circle cx="35" cy="35" r="8" fill="#15803d" stroke="#000" stroke-width="3"/>
+                    <circle cx="35" cy="35" r="5" fill="#ffffff" stroke="#000" stroke-width="2"/>
+                    <circle cx="34" cy="35" r="2" fill="#000000"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 3 -->
+            <div class="comic-panel-box border-3 border-black bg-[#9be2ff] relative min-h-[220px] rounded flex flex-col justify-between overflow-hidden shadow-[3px_3px_0px_#000]" style="border: 3px solid #000;">
+              <span id="card_p3_cap_txt" class="comic-caption-box bg-white border-b-2 border-r-2 border-black px-2 py-0.5 text-[11px] font-bold comic-neue absolute top-0 left-0 z-20">Election day arrived...</span>
+              
+              <!-- Speech Bubbles -->
+              <div class="p-2.5 pt-7 space-y-2 z-10">
+                <div id="card_p3_sura_box" class="comic-bubble bubble-tail-left max-w-[85%]">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p3_sura_txt">"Why are the votes so close?"</span>
+                </div>
+                <div id="card_p3_baya_box" class="comic-bubble bubble-tail-right ml-auto max-w-[85%] bg-amber-50">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p3_baya_txt">"Neither of us will back down!"</span>
+                </div>
+              </div>
+
+              <!-- Floor & Avatars -->
+              <div class="comic-floor-box relative w-full h-16 mt-auto bg-[#84ce43] border-t-2 border-black flex items-end justify-between px-6 pb-1">
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M20,110 C20,60 40,20 60,20 C80,20 85,60 85,110 Z" fill="#475569" stroke="#000" stroke-width="4"/>
+                    <circle cx="60" cy="40" r="7" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="60" cy="40" r="3" fill="#000000"/>
+                  </svg>
+                </div>
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M15,110 C15,60 25,20 50,20 C75,20 85,60 85,110 Z" fill="#15803d" stroke="#000" stroke-width="4"/>
+                    <circle cx="35" cy="35" r="8" fill="#15803d" stroke="#000" stroke-width="3"/>
+                    <circle cx="35" cy="35" r="5" fill="#ffffff" stroke="#000" stroke-width="2"/>
+                    <circle cx="35" cy="35" r="2" fill="#000000"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 4 (CLIMAX) -->
+            <div class="comic-panel-box border-3 border-black bg-[#9be2ff] relative min-h-[220px] rounded flex flex-col justify-between overflow-hidden shadow-[3px_3px_0px_#000]" style="border: 3px solid #000;">
+              <span id="card_p4_cap_txt" class="comic-caption-box bg-white border-b-2 border-r-2 border-black px-2 py-0.5 text-[11px] font-bold comic-neue absolute top-0 left-0 z-20">Tied votes! SPLASH!</span>
+              
+              <!-- Speech Bubbles -->
+              <div class="p-2.5 pt-7 space-y-2 z-10">
+                <div id="card_p4_sura_box" class="comic-bubble bubble-tail-left max-w-[85%]">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p4_sura_txt">"A tied vote? Now what?!"</span>
+                </div>
+                <div id="card_p4_baya_box" class="comic-bubble bubble-tail-right ml-auto max-w-[85%] bg-amber-50">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p4_baya_txt">"We can't keep arguing forever!"</span>
+                </div>
+              </div>
+
+              <!-- SPLASH Graphic -->
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+                <span class="text-6xl font-black comic-font text-rose-600 rotate-12">SPLASH!</span>
+              </div>
+
+              <!-- Floor & Avatars -->
+              <div class="comic-floor-box relative w-full h-16 mt-auto bg-[#84ce43] border-t-2 border-black flex items-end justify-between px-6 pb-1">
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M20,110 C20,60 40,20 60,20 C80,20 85,60 85,110 Z" fill="#475569" stroke="#000" stroke-width="4"/>
+                    <circle cx="60" cy="40" r="9" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="60" cy="40" r="3" fill="#000000"/>
+                  </svg>
+                </div>
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M15,110 C15,60 25,20 50,20 C75,20 85,60 85,110 Z" fill="#15803d" stroke="#000" stroke-width="4"/>
+                    <circle cx="35" cy="35" r="9" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="35" cy="35" r="3" fill="#000000"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 5 -->
+            <div class="comic-panel-box border-3 border-black bg-[#9be2ff] relative min-h-[220px] rounded flex flex-col justify-between overflow-hidden shadow-[3px_3px_0px_#000]" style="border: 3px solid #000;">
+              <span id="card_p5_cap_txt" class="comic-caption-box bg-white border-b-2 border-r-2 border-black px-2 py-0.5 text-[11px] font-bold comic-neue absolute top-0 left-0 z-20">After thoughtful discussion...</span>
+              
+              <!-- Speech Bubbles -->
+              <div class="p-2.5 pt-7 space-y-2 z-10">
+                <div id="card_p5_sura_box" class="comic-bubble bubble-tail-left max-w-[85%]">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p5_sura_txt">"What if we share presidency?"</span>
+                </div>
+                <div id="card_p5_baya_box" class="comic-bubble bubble-tail-right ml-auto max-w-[85%] bg-amber-50">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p5_baya_txt">"You handle academics, I handle events!"</span>
+                </div>
+              </div>
+
+              <!-- Floor & Avatars -->
+              <div class="comic-floor-box relative w-full h-16 mt-auto bg-[#84ce43] border-t-2 border-black flex items-end justify-between px-6 pb-1">
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M20,110 C20,60 40,20 60,20 C80,20 85,60 85,110 Z" fill="#475569" stroke="#000" stroke-width="4"/>
+                    <circle cx="60" cy="40" r="7" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="62" cy="40" r="3" fill="#000000"/>
+                  </svg>
+                </div>
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M15,110 C15,60 25,20 50,20 C75,20 85,60 85,110 Z" fill="#15803d" stroke="#000" stroke-width="4"/>
+                    <circle cx="35" cy="35" r="8" fill="#15803d" stroke="#000" stroke-width="3"/>
+                    <circle cx="35" cy="35" r="5" fill="#ffffff" stroke="#000" stroke-width="2"/>
+                    <circle cx="34" cy="35" r="2" fill="#000000"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 6 -->
+            <div class="comic-panel-box border-3 border-black bg-[#9be2ff] relative min-h-[220px] rounded flex flex-col justify-between overflow-hidden shadow-[3px_3px_0px_#000]" style="border: 3px solid #000;">
+              
+              <!-- Speech Bubbles -->
+              <div class="p-2.5 pt-3 space-y-2 z-10">
+                <div id="card_p6_sura_box" class="comic-bubble bubble-tail-left max-w-[85%]">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p6_sura_txt">"Teamwork beats rivalry!"</span>
+                </div>
+                <div id="card_p6_baya_box" class="comic-bubble bubble-tail-right ml-auto max-w-[85%] bg-amber-50">
+                  <span class="block text-[11px] font-bold comic-neue text-black leading-tight" id="card_p6_baya_txt">"We are better together!"</span>
+                </div>
+              </div>
+
+              <!-- Character Handshake Pose & Grass Floor -->
+              <div class="comic-floor-box relative w-full h-16 mt-auto bg-[#84ce43] border-t-2 border-black flex items-end justify-center gap-2 pb-1">
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M20,110 C20,60 40,20 60,20 C80,20 85,60 85,110 Z" fill="#475569" stroke="#000" stroke-width="4"/>
+                    <circle cx="60" cy="40" r="7" fill="#ffffff" stroke="#000" stroke-width="3"/>
+                    <circle cx="62" cy="40" r="3" fill="#000000"/>
+                  </svg>
+                </div>
+                <span class="text-2xl z-10 pb-1">🤝</span>
+                <div class="w-12 h-14 flex items-end">
+                  <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                    <path d="M15,110 C15,60 25,20 50,20 C75,20 85,60 85,110 Z" fill="#15803d" stroke="#000" stroke-width="4"/>
+                    <circle cx="35" cy="35" r="8" fill="#15803d" stroke="#000" stroke-width="3"/>
+                    <circle cx="35" cy="35" r="5" fill="#ffffff" stroke="#000" stroke-width="2"/>
+                    <circle cx="34" cy="35" r="2" fill="#000000"/>
+                  </svg>
+                </div>
+              </div>
+
+              <span id="card_p6_cap_txt" class="comic-caption-box bg-white border-t-2 border-black px-2 py-0.5 text-[11px] font-bold comic-neue text-center block z-20">Co-presidents for the win!</span>
+            </div>
+
+          </div>
+
+          <!-- STRIP FOOTER / COPYRIGHT -->
+          <div id="card_footer" class="text-center border-t-2 border-black pt-2 text-[10px] font-bold comic-neue text-slate-700 flex justify-between items-center">
+            <span>Basic Written English • STKIP Al Hikmah Surabaya</span>
+            <span>#ModernSuroAndBoyo #SundayComics</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SOCIAL MEDIA ACTION BUTTONS -->
+      <div class="no-print flex flex-wrap items-center justify-between gap-3 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+        <div class="flex items-center gap-2">
+          <button onclick="downloadVisualCardPNG()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-lg shadow transition flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Download High-Res Comic (.PNG)
+          </button>
+          <button onclick="copySocialCaption()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-4 py-2 rounded-lg shadow transition flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+            Copy Social Media Caption & Hashtags
+          </button>
+        </div>
+        <span class="text-[11px] text-slate-500 font-medium">Ready to post on Instagram / TikTok / WhatsApp Status!</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER COPYRIGHT WATERMARK -->
+  <footer class="max-w-5xl mx-auto px-4 my-8 text-center border-t border-slate-200 pt-6">
+    <div class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-100/90 rounded-full border border-slate-300 shadow-sm text-xs text-slate-600 font-semibold tracking-wide">
+      <svg class="w-4 h-4 text-maroon-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+      <span>Developed by @ PAK SYAFF RESEARCH TEAM 2026</span>
+    </div>
+
+    <!-- LEGAL DISCLAIMER & NOTICE -->
+    <p class="mt-3 text-[11px] text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
+      <strong>LEGAL DISCLAIMER & NOTICE:</strong> This instructional material and worksheet are strictly protected under copyright and intellectual property regulations. Do not use, copy, reproduce, distribute, or adapt any portion of this document without explicit formal written permission from Dr. Ahmad Syafi'i, M.Pd. and the PAK SYAFF RESEARCH TEAM.
+    </p>
+  </footer>
+
+  <!-- JAVASCRIPT CORE LOGIC -->
+  <script>
+    function playVideoAt(targetKey, seconds) {
+      const vid = document.getElementById(`video_${targetKey}`);
+      if (vid) {
+        const otherKey = targetKey === 'folktale' ? 'modern' : 'folktale';
+        const otherVid = document.getElementById(`video_${otherKey}`);
+        if (otherVid && !otherVid.paused) {
+          otherVid.pause();
+        }
+        vid.currentTime = seconds;
+        vid.play().catch(e => console.log("Playback error:", e));
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('std_date');
+      if (dateInput && !dateInput.value) {
+        dateInput.value = new Date().toISOString().split('T')[0];
+      }
+      loadSavedData();
+      compileDraftParagraph();
+      compileRevisedParagraph();
+      updateVisualTheme();
+      updateAspectRatio();
+      updateVisualCard();
+    });
+
+    function switchFeedbackMode(mode) {
+      document.getElementById('section_3a').classList.add('hidden');
+      document.getElementById('section_3b').classList.add('hidden');
+      document.getElementById('section_3c').classList.add('hidden');
+
+      const badge = document.getElementById('active_mode_badge');
+
+      if (mode === 'A') {
+        document.getElementById('section_3a').classList.remove('hidden');
+        badge.innerText = "Active: Option A (AI Feedback)";
+      } else if (mode === 'B') {
+        document.getElementById('section_3b').classList.remove('hidden');
+        badge.innerText = "Active: Option B (Peer Feedback)";
+      } else if (mode === 'C') {
+        document.getElementById('section_3c').classList.remove('hidden');
+        badge.innerText = "Active: Option C (Offline Cards)";
+      }
+      autoSaveData();
+    }
+
+    function ensurePunctuation(sentence) {
+      if (!sentence) return '';
+      const lastChar = sentence.slice(-1);
+      if (['.', '!', '?'].includes(lastChar)) {
+        return sentence;
+      }
+      return sentence + '.';
+    }
+
+    function compileDraftParagraph() {
+      const inputs = [];
+      for (let i = 1; i <= 7; i++) {
+        const el = document.getElementById(`d${i}`);
+        const val = el ? el.value.trim() : '';
+        if (val) {
+          inputs.push(ensurePunctuation(val));
+        }
+      }
+
+      const textDisplay = document.getElementById('compiled_draft_text');
+      const countDisplay = document.getElementById('draft_word_count');
+
+      if (inputs.length === 0) {
+        textDisplay.innerText = "Start typing your sentences above to see your compiled first draft paragraph appear here automatically...";
+        countDisplay.innerText = "0 words";
+      } else {
+        const fullPara = inputs.join(' ');
+        textDisplay.innerText = fullPara;
+        const words = fullPara.split(/\s+/).filter(w => w.length > 0).length;
+        countDisplay.innerText = `${words} words`;
+      }
+      autoSaveData();
+    }
+
+    function compileRevisedParagraph() {
+      const inputs = [];
+      for (let i = 1; i <= 7; i++) {
+        const el = document.getElementById(`r${i}`);
+        const val = el ? el.value.trim() : '';
+        if (val) {
+          inputs.push(ensurePunctuation(val));
+        }
+      }
+
+      const textDisplay = document.getElementById('compiled_revised_text');
+      const countDisplay = document.getElementById('revised_word_count');
+
+      if (inputs.length === 0) {
+        textDisplay.innerText = "Fill in your revised sentences above to generate your final polished paragraph...";
+        countDisplay.innerText = "0 words";
+      } else {
+        const fullPara = inputs.join(' ');
+        textDisplay.innerText = fullPara;
+        const words = fullPara.split(/\s+/).filter(w => w.length > 0).length;
+        countDisplay.innerText = `${words} words`;
+      }
+      autoSaveData();
+    }
+
+    function runGrammarCheck(targetType) {
+      const textId = targetType === 'draft' ? 'compiled_draft_text' : 'compiled_revised_text';
+      const reportId = targetType === 'draft' ? 'draft_grammar_report' : 'revised_grammar_report';
+      
+      const rawText = document.getElementById(textId).innerText;
+      const reportBox = document.getElementById(reportId);
+
+      if (rawText.includes('Start typing') || rawText.includes('Fill in your revised') || !rawText.trim()) {
+        showToast("⚠️ Please write a few sentences first before running the rubric checker!", "warning");
+        return;
+      }
+
+      reportBox.classList.remove('hidden');
+
+      const lowerText = rawText.toLowerCase();
+      const words = lowerText.match(/\b[a-z']+\b/g) || [];
+      const totalWords = words.length;
+
+      const sentences = rawText.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 0);
+      const sentenceCount = sentences.length;
+
+      // 1. Content (Isi) — 30% [27-30, 22-26, 17-21, 0-16]
+      let scoreContent = 0;
+      let levelContent = "";
+      if (sentenceCount >= 5 && totalWords >= 45) {
+        scoreContent = 29;
+        levelContent = "27–30 (Excellent)";
+      } else if (sentenceCount >= 4 || totalWords >= 35) {
+        scoreContent = 24;
+        levelContent = "22–26 (Good)";
+      } else if (sentenceCount >= 2 || totalWords >= 20) {
+        scoreContent = 19;
+        levelContent = "17–21 (Fair)";
+      } else {
+        scoreContent = 12;
+        levelContent = "0–16 (Inadequate)";
+      }
+
+      // 2. Organization (Organisasi) — 20% [18-20, 14-17, 10-13, 0-9]
+      const temporalConnectors = ['suddenly', 'after that', 'eventually', 'first', 'then', 'finally', 'meanwhile', 'later', 'one day', 'moments later', 'before long', 'next', 'in the end', 'at last'];
+      let foundConnectors = [];
+      temporalConnectors.forEach(c => {
+        if (lowerText.includes(c) && !foundConnectors.includes(c)) foundConnectors.push(c);
+      });
+
+      let scoreOrg = 0;
+      let levelOrg = "";
+      if (foundConnectors.length >= 2 && sentenceCount >= 4) {
+        scoreOrg = 19;
+        levelOrg = "18–20 (Excellent)";
+      } else if (foundConnectors.length >= 1) {
+        scoreOrg = 16;
+        levelOrg = "14–17 (Good)";
+      } else if (totalWords >= 20) {
+        scoreOrg = 12;
+        levelOrg = "10–13 (Fair)";
+      } else {
+        scoreOrg = 7;
+        levelOrg = "0–9 (Inadequate)";
+      }
+
+      // 3. Grammar / Language Use (Tata Bahasa) — 20% [18-20, 14-17, 10-13, 0-9]
+      const presentVerbs = ['is', 'are', 'am', 'go', 'goes', 'run', 'runs', 'fight', 'fights', 'argue', 'argues', 'want', 'wants', 'say', 'says', 'take', 'takes', 'refuse', 'refuses', 'think', 'thinks', 'has', 'have', 'decide', 'decides'];
+      let foundPresent = [];
+      words.forEach(w => {
+        if (presentVerbs.includes(w) && !foundPresent.includes(w)) foundPresent.push(w);
+      });
+
+      let scoreGrammar = 0;
+      let levelGrammar = "";
+      if (foundPresent.length === 0 && totalWords >= 25) {
+        scoreGrammar = 19;
+        levelGrammar = "18–20 (Excellent)";
+      } else if (foundPresent.length <= 2) {
+        scoreGrammar = 16;
+        levelGrammar = "14–17 (Good)";
+      } else if (foundPresent.length <= 4) {
+        scoreGrammar = 12;
+        levelGrammar = "10–13 (Fair)";
+      } else {
+        scoreGrammar = 7;
+        levelGrammar = "0–9 (Inadequate)";
+      }
+
+      // 4. Vocabulary (Kosakata / Diksi) — 15% [14-15, 11-13, 8-10, 0-7]
+      const weakWordMap = {
+        'said': ['replied', 'exclaimed', 'shouted', 'argued', 'demanded', 'insisted'],
+        'angry': ['furious', 'irritated', 'indignant', 'enraged'],
+        'bad': ['harmful', 'destructive', 'hostile', 'unfavorable'],
+        'good': ['beneficial', 'constructive', 'exemplary', 'admirable'],
+        'went': ['marched', 'rushed', 'stormed', 'proceeded'],
+        'big': ['significant', 'intense', 'massive', 'substantial'],
+        'got': ['received', 'obtained', 'acquired', 'earned']
+      };
+
+      let vocabularySuggestions = [];
+      Object.keys(weakWordMap).forEach(weakWord => {
+        if (words.includes(weakWord)) {
+          vocabularySuggestions.push({
+            weak: weakWord,
+            better: weakWordMap[weakWord].join(', ')
+          });
+        }
+      });
+
+      const uniqueWords = new Set(words).size;
+      const vocabRatio = totalWords > 0 ? (uniqueWords / totalWords) : 0;
+
+      let scoreVocab = 0;
+      let levelVocab = "";
+      if (vocabRatio >= 0.60 && totalWords >= 30) {
+        scoreVocab = 15;
+        levelVocab = "14–15 (Excellent)";
+      } else if (vocabRatio >= 0.45) {
+        scoreVocab = 12;
+        levelVocab = "11–13 (Good)";
+      } else if (vocabRatio >= 0.30) {
+        scoreVocab = 9;
+        levelVocab = "8–10 (Fair)";
+      } else {
+        scoreVocab = 5;
+        levelVocab = "0–7 (Inadequate)";
+      }
+
+      // 5. Mechanics (Mekanik) — 15% [14-15, 11-13, 8-10, 0-7]
+      let mechErrors = 0;
+      sentences.forEach(s => {
+        const trimmed = s.trim();
+        if (trimmed.length > 0) {
+          const firstChar = trimmed.charAt(0);
+          if (firstChar !== firstChar.toUpperCase() && /[a-z]/.test(firstChar)) {
+            mechErrors++;
+          }
+          const lastChar = trimmed.slice(-1);
+          if (!['.', '!', '?'].includes(lastChar)) {
+            mechErrors++;
+          }
+        }
+      });
+
+      let scoreMech = 0;
+      let levelMech = "";
+      if (mechErrors === 0 && sentences.length > 0) {
+        scoreMech = 15;
+        levelMech = "14–15 (Excellent)";
+      } else if (mechErrors <= 2) {
+        scoreMech = 12;
+        levelMech = "11–13 (Good)";
+      } else if (mechErrors <= 4) {
+        scoreMech = 9;
+        levelMech = "8–10 (Fair)";
+      } else {
+        scoreMech = 5;
+        levelMech = "0–7 (Inadequate)";
+      }
+
+      const overallRubricScore = scoreContent + scoreOrg + scoreGrammar + scoreVocab + scoreMech;
+
+      let reportHTML = `
+        <div class="border-b border-slate-200 pb-2.5 mb-3 flex items-center justify-between">
+          <div>
+            <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wide">Rubrik Penilaian Analitik (Skala 0–100) — ${targetType === 'draft' ? 'First Draft' : 'Final Story'}</h5>
+            <p class="text-[11px] text-slate-500">Evaluasi Otomatis 5 Kriteria Penulisan Naratif</p>
+          </div>
+          <div class="text-right">
+            <span class="text-lg font-black ${overallRubricScore >= 78 ? 'text-emerald-700' : 'text-amber-700'}">${overallRubricScore} / 100</span>
+            <span class="block text-[10px] font-bold ${overallRubricScore >= 78 ? 'text-emerald-800 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-2 py-0.5 rounded">
+              ${overallRubricScore >= 78 ? '✅ Rubric Benchmark Met' : '⚠️ Revision Recommended'}
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-3">
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">1. Content (30%)</span>
+            <span class="text-xs font-bold ${scoreContent >= 22 ? 'text-emerald-700' : 'text-amber-700'}">${scoreContent}/30</span>
+            <span class="block text-[9px] text-slate-500 truncate">${levelContent}</span>
+          </div>
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">2. Organization (20%)</span>
+            <span class="text-xs font-bold ${scoreOrg >= 14 ? 'text-emerald-700' : 'text-amber-700'}">${scoreOrg}/20</span>
+            <span class="block text-[9px] text-slate-500 truncate">${levelOrg}</span>
+          </div>
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">3. Grammar (20%)</span>
+            <span class="text-xs font-bold ${scoreGrammar >= 14 ? 'text-emerald-700' : 'text-amber-700'}">${scoreGrammar}/20</span>
+            <span class="block text-[9px] text-slate-500 truncate">${levelGrammar}</span>
+          </div>
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">4. Vocabulary (15%)</span>
+            <span class="text-xs font-bold ${scoreVocab >= 11 ? 'text-emerald-700' : 'text-amber-700'}">${scoreVocab}/15</span>
+            <span class="block text-[9px] text-slate-500 truncate">${levelVocab}</span>
+          </div>
+          <div class="p-2 bg-slate-50 border rounded text-center">
+            <span class="block text-[10px] text-slate-500 font-bold uppercase">5. Mechanics (15%)</span>
+            <span class="text-xs font-bold ${scoreMech >= 11 ? 'text-emerald-700' : 'text-amber-700'}">${scoreMech}/15</span>
+            <span class="block text-[9px] text-slate-500 truncate">${levelMech}</span>
+          </div>
+        </div>
+
+        <div class="space-y-2 text-[11px]">
+          <div class="p-2.5 rounded border ${foundPresent.length > 0 ? 'bg-amber-50 border-amber-300 text-amber-900' : 'bg-emerald-50 border-emerald-300 text-emerald-900'}">
+            <strong class="block mb-1">📍 Grammar & Tense Attention:</strong>
+      `;
+
+      if (foundPresent.length > 0) {
+        reportHTML += `
+            <p>Ubah kata kerja present-tense (<code class="font-bold text-amber-950">${foundPresent.join(', ')}</code>) menjadi Simple Past Tense:</p>
+            <ul class="list-disc pl-4 mt-1 space-y-0.5">
+        `;
+        foundPresent.forEach(verb => {
+          let pastSuggest = "was/were/did";
+          if (verb === 'is') pastSuggest = 'was';
+          else if (verb === 'are') pastSuggest = 'were';
+          else if (verb === 'go' || verb === 'goes') pastSuggest = 'went';
+          else if (verb === 'run' || verb === 'runs') pastSuggest = 'ran';
+          else if (verb === 'fight' || verb === 'fights') pastSuggest = 'fought';
+          else if (verb === 'argue' || verb === 'argues') pastSuggest = 'argued';
+          else if (verb === 'want' || verb === 'wants') pastSuggest = 'wanted';
+          else if (verb === 'say' || verb === 'says') pastSuggest = 'said';
+          else if (verb === 'think' || verb === 'thinks') pastSuggest = 'thought';
+          reportHTML += `<li>Ganti "<strong>${verb}</strong>" menjadi "<em>${pastSuggest}</em>"</li>`;
+        });
+        reportHTML += `</ul>`;
+      } else {
+        reportHTML += `<p>✅ Sangat baik! Penggunaan Simple Past Tense konsisten pada narasi Anda.</p>`;
+      }
+
+      reportHTML += `</div>`;
+
+      reportHTML += `
+        <div class="p-2.5 rounded border ${foundConnectors.length < 2 ? 'bg-amber-50 border-amber-300 text-amber-900' : 'bg-emerald-50 border-emerald-300 text-emerald-900'}">
+          <strong class="block mb-1">📍 Organization & Transitions Attention:</strong>
+      `;
+      if (foundConnectors.length < 2) {
+        reportHTML += `
+          <p>Tambahkan minimal 2 kata transisi temporal untuk memperkuat alur cerita (Orientation → Complication → Resolution):</p>
+          <div class="flex flex-wrap gap-1 mt-1.5">
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">Suddenly</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">After that</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">Eventually</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">Meanwhile</span>
+            <span class="bg-amber-200 text-amber-900 font-semibold px-2 py-0.5 rounded text-[10px]">In the end</span>
+          </div>
+        `;
+      } else {
+        reportHTML += `<p>✅ Alur kronologis runtut! Anda menyertakan kata transisi: <strong>${foundConnectors.join(', ')}</strong>.</p>`;
+      }
+      reportHTML += `</div>`;
+
+      if (vocabularySuggestions.length > 0) {
+        reportHTML += `
+          <div class="p-2.5 bg-blue-50 border border-blue-300 text-blue-900 rounded">
+            <strong class="block mb-1">📍 Vocabulary & Word Choice Upgrades:</strong>
+            <p class="mb-1">Ganti kata hambar/umum dengan kata kerja atau kata sifat yang lebih ekspresif:</p>
+            <ul class="list-disc pl-4 space-y-0.5">
+        `;
+        vocabularySuggestions.forEach(item => {
+          reportHTML += `<li>Ganti kata "<strong>${item.weak}</strong>" dengan alternatif: <em>${item.better}</em></li>`;
+        });
+        reportHTML += `</ul></div>`;
+      }
+
+      if (sentenceCount < 5) {
+        reportHTML += `
+          <div class="p-2 bg-red-50 border border-red-200 text-red-900 rounded">
+            <strong>⚠️ Content Length:</strong> Paragraf Anda baru terdiri dari ${sentenceCount} kalimat. Kembangkan cerita hingga <strong>5–7 kalimat</strong> untuk memenuhi target kriteria Content (Isi).
+          </div>
+        `;
+      }
+
+      reportHTML += `</div>`;
+      reportBox.innerHTML = reportHTML;
+      showToast(`🔍 ${targetType === 'draft' ? 'First draft' : 'Final draft'} rubric analysis completed!`);
+    }
+
+    function runIntegrityCheck() {
+      const finalPara = document.getElementById('compiled_revised_text').innerText;
+      if (finalPara.includes('Fill in your revised') || !finalPara.trim()) {
+        showToast("⚠️ Please write and compile your revised final story first in Step 4A!", "warning");
+        return;
+      }
+
+      const resultsBox = document.getElementById('integrity_results');
+      resultsBox.classList.remove('hidden');
+
+      const lower = finalPara.toLowerCase();
+      const words = lower.match(/\b[a-z']+\b/g) || [];
+      const sentences = finalPara.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 0);
+
+      // AI Detector Diagnostic Logic
+      const aiBuzzwordMap = {
+        "delve": "AI cliché word indicating artificial depth.",
+        "testament": "Overused formal AI phrasing.",
+        "tapestry": "Typical AI poetic metaphor.",
+        "furthermore": "Overly formal transition for simple student story.",
+        "it is worth noting": "Verbose AI filler structure.",
+        "crucial role": "Generic AI academic descriptor.",
+        "serves as a": "Passive AI functional descriptor.",
+        "not only": "Formulaic paired conjunction.",
+        "in conclusion": "Rigid summary phrase.",
+        "orchestrated": "Complex verb commonly generated by AI.",
+        "seamlessly": "Frequent AI adverbal modifier.",
+        "intricate": "Standard AI adjective.",
+        "underscores": "Formal AI verb.",
+        "paramount": "High-level AI vocabulary outlier.",
+        "pivotal": "Repetitive AI key-point marker.",
+        "fostering": "Abstract AI narrative term."
+      };
+
+      let foundAiWords = [];
+      Object.keys(aiBuzzwordMap).forEach(w => {
+        if (lower.includes(w)) {
+          foundAiWords.push({ word: w, reason: aiBuzzwordMap[w] });
+        }
+      });
+
+      const sentenceLengths = sentences.map(s => (s.match(/\b[a-z']+\b/g) || []).length);
+      const avgLen = sentenceLengths.length > 0 ? sentenceLengths.reduce((a, b) => a + b, 0) / sentenceLengths.length : 0;
+      let varianceSum = 0;
+      sentenceLengths.forEach(l => { varianceSum += Math.pow(l - avgLen, 2); });
+      const stdDev = sentenceLengths.length > 0 ? Math.sqrt(varianceSum / sentenceLengths.length) : 0;
+      const isMonotonous = stdDev < 1.8 && words.length > 35;
+
+      let aiScore = 3 + (foundAiWords.length * 12);
+      if (isMonotonous) aiScore += 10;
+      aiScore = Math.min(95, Math.max(2, Math.round(aiScore)));
+
+      const copiedPhrasesList = [
+        "sura and baya were top students in class 10a last semester",
+        "sura and baya were competing in the student council presidential election",
+        "both refused to step down or share campaign promises until a tied vote forced them to become co-presidents",
+        "they agreed to divide their hunting territory between sea and land",
+        "were competing in the student council",
+        "refused to step down or share campaign promises"
+      ];
+
+      let matchedPhrases = [];
+      copiedPhrasesList.forEach(cp => {
+        if (lower.includes(cp)) {
+          matchedPhrases.push(cp);
+        }
+      });
+
+      let plagiarismScore = (matchedPhrases.length * 18);
+      if (words.length > 0) {
+        const structuralTemplateCount = (lower.match(/\b(the|and|in|of|to|was|were|a|an|they|both)\b/g) || []).length;
+        plagiarismScore += Math.round((structuralTemplateCount / words.length) * 4);
+      }
+      plagiarismScore = Math.min(90, Math.max(3, Math.round(plagiarismScore)));
+
+      document.getElementById('plagiarism_score_text').innerText = `${plagiarismScore}%`;
+      document.getElementById('ai_score_text').innerText = `${aiScore}%`;
+
+      const plagBar = document.getElementById('plagiarism_bar');
+      const aiBar = document.getElementById('ai_bar');
+      
+      plagBar.style.width = `${Math.min(100, plagiarismScore)}%`;
+      aiBar.style.width = `${Math.min(100, aiScore)}%`;
+
+      const plagFlag = document.getElementById('plagiarism_flag');
+      const aiFlag = document.getElementById('ai_flag');
+
+      const plagPassed = plagiarismScore <= 20;
+      const aiPassed = aiScore <= 15;
+
+      if (plagPassed) {
+        plagBar.className = "bg-emerald-500 h-2.5 rounded-full transition-all duration-500";
+        plagFlag.className = "font-bold text-emerald-600";
+        plagFlag.innerText = "PASSED (≤ 20%)";
+      } else {
+        plagBar.className = "bg-rose-500 h-2.5 rounded-full transition-all duration-500";
+        plagFlag.className = "font-bold text-rose-600";
+        plagFlag.innerText = "HIGH ( > 20%)";
+      }
+
+      if (aiPassed) {
+        aiBar.className = "bg-emerald-500 h-2.5 rounded-full transition-all duration-500";
+        aiFlag.className = "font-bold text-emerald-600";
+        aiFlag.innerText = "PASSED (≤ 15%)";
+      } else {
+        aiBar.className = "bg-amber-500 h-2.5 rounded-full transition-all duration-500";
+        aiFlag.className = "font-bold text-amber-600";
+        aiFlag.innerText = "HIGH ( > 15%)";
+      }
+
+      const badge = document.getElementById('integrity_status_badge');
+      const msgBox = document.getElementById('integrity_feedback_msg');
+
+      if (plagPassed && aiPassed) {
+        badge.className = "text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded";
+        badge.innerText = "VERIFIED PASSED";
+        msgBox.className = "p-2.5 rounded text-[11px] bg-emerald-50 border border-emerald-200 text-emerald-900";
+        msgBox.innerHTML = `<strong>✅ Academic Integrity Verified!</strong> Plagiarism Rate: <strong>${plagiarismScore}%</strong> (Target: ≤20%), AI Detection Rate: <strong>${aiScore}%</strong> (Target: ≤15%). Your story demonstrates authentic student authorship.`;
+      } else {
+        badge.className = "text-[10px] font-bold bg-rose-100 text-rose-800 px-2.5 py-0.5 rounded";
+        badge.innerText = "REVISION REQUIRED";
+        msgBox.className = "p-2.5 rounded text-[11px] bg-rose-50 border border-rose-200 text-rose-900";
+        msgBox.innerHTML = `<strong>⚠️ Integrity Threshold Exceeded!</strong><br>` +
+          (!plagPassed ? `• Plagiarism similarity rate (<strong>${plagiarismScore}%</strong>) exceeds maximum limit of 20%. Please review the detailed descriptions below and rewrite highlighted phrases.<br>` : '') +
+          (!aiPassed ? `• AI detection rate (<strong>${aiScore}%</strong>) exceeds maximum limit of 15%. Humanize your text by eliminating AI-style phrasing and varying sentence structures.` : '');
+      }
+
+      const detailedBox = document.getElementById('integrity_detailed_breakdown');
+      let detailedHTML = '';
+
+      detailedHTML += `
+        <div class="p-3 rounded-lg border ${plagPassed ? 'bg-slate-50 border-slate-200' : 'bg-rose-50 border-rose-200 text-rose-950'}">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="font-bold text-xs flex items-center gap-1.5 ${plagPassed ? 'text-slate-800' : 'text-rose-900'}">
+              <span>📋</span> Plagiarism Similarity Analysis & Revision Guidance
+            </span>
+            <span class="text-[10px] font-bold ${plagPassed ? 'text-emerald-700 bg-emerald-100' : 'text-rose-800 bg-rose-100'} px-2 py-0.5 rounded">
+              Score: ${plagiarismScore}% / Max 20%
+            </span>
+          </div>
+      `;
+
+      if (matchedPhrases.length > 0) {
+        detailedHTML += `
+          <p class="text-[11px] mb-2 ${plagPassed ? 'text-slate-600' : 'text-rose-900'}">
+            The checker identified <strong>${matchedPhrases.length} verbatim template phrase(s)</strong> copied directly from sample prompts or external sources:
+          </p>
+          <ul class="list-disc pl-5 text-[11px] space-y-1 mb-2 font-mono bg-white/80 p-2 rounded border border-slate-200">
+        `;
+        matchedPhrases.forEach(phrase => {
+          detailedHTML += `<li class="text-rose-800">"${phrase}"</li>`;
+        });
+        detailedHTML += `
+          </ul>
+          <div class="p-2 bg-amber-50 border border-amber-200 rounded text-[11px] text-amber-900">
+            <strong>💡 Recommended Revision Action:</strong> Paraphrase the highlighted sentences using your own vocabulary. Describe the setting or conflict with unique character names, specific locations, or original dialogue instead of copying sample sentence structures.
+          </div>
+        `;
+      } else {
+        detailedHTML += `
+          <p class="text-[11px] text-emerald-800">
+            ✅ <strong>No verbatim matches detected!</strong> Your paragraph displays original wording without copying directly from worksheet examples or template sentences.
+          </p>
+        `;
+      }
+      detailedHTML += `</div>`;
+
+      detailedHTML += `
+        <div class="p-3 rounded-lg border ${aiPassed ? 'bg-slate-50 border-slate-200' : 'bg-amber-50 border-amber-300 text-amber-950'}">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="font-bold text-xs flex items-center gap-1.5 ${aiPassed ? 'text-slate-800' : 'text-amber-900'}">
+              <span>🤖</span> AI Content Detection Analysis & Humanizing Steps
+            </span>
+            <span class="text-[10px] font-bold ${aiPassed ? 'text-emerald-700 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-2 py-0.5 rounded">
+              Score: ${aiScore}% / Max 15%
+            </span>
+          </div>
+      `;
+
+      if (foundAiWords.length > 0 || isMonotonous) {
+        detailedHTML += `<div class="space-y-2 text-[11px]">`;
+        
+        if (foundAiWords.length > 0) {
+          detailedHTML += `
+            <p class="text-amber-950">
+              Detected <strong>${foundAiWords.length} AI-style word(s)/phrase(s)</strong> commonly generated by large language models:
+            </p>
+            <ul class="list-disc pl-5 space-y-0.5 bg-white/80 p-2 rounded border border-amber-200">
+          `;
+          foundAiWords.forEach(item => {
+            detailedHTML += `<li><strong class="text-amber-900">"${item.word}"</strong> — <span class="text-slate-600">${item.reason}</span></li>`;
+          });
+          detailedHTML += `</ul>`;
+        }
+
+        if (isMonotonous) {
+          detailedHTML += `
+            <div class="p-2 bg-amber-100/70 rounded border border-amber-300 text-amber-900">
+              <strong>⚠️ Robotic Rhythm / Low Sentence Length Variance:</strong> Your sentences have an unnaturally uniform length (~${Math.round(avgLen)} words per sentence with std dev ${stdDev.toFixed(1)}). AI generators often produce uniform sentence rhythm, whereas authentic human narrative writing naturally mixes short, impactful statements with longer descriptive sentences.
+            </div>
+          `;
+        }
+
+        detailedHTML += `
+          <div class="p-2.5 bg-blue-50 border border-blue-200 rounded text-blue-900">
+            <strong>💡 How to Humanize Your Story (To reduce AI score below 15%):</strong>
+            <ul class="list-disc pl-4 mt-1 space-y-0.5 text-[11px]">
+              <li>Replace formal transitions (<em>furthermore, in conclusion, crucial role</em>) with simple, natural transitions (<em>and then, suddenly, after that, finally</em>).</li>
+              <li>Insert direct character dialogue with contractions (e.g., <em>Sura shouted, "We can't divide it like this!"</em>).</li>
+              <li>Mix short punchy sentences (3–5 words) alongside longer descriptive ones to create realistic storytelling rhythm.</li>
+              <li>Share personal character feelings and sensory details in your own authentic voice.</li>
+            </ul>
+          </div>
+        </div>`;
+      } else {
+        detailedHTML += `
+          <p class="text-[11px] text-emerald-800">
+            ✅ <strong>Authentic Human Tone Verified!</strong> No AI buzzwords or monotonous sentence structures were detected. The rhythm and phrasing reflect genuine student authorship.
+          </p>
+        `;
+      }
+      detailedHTML += `</div>`;
+
+      detailedBox.innerHTML = detailedHTML;
+
+      document.getElementById('integrity_results').dataset.plag = plagiarismScore;
+      document.getElementById('integrity_results').dataset.ai = aiScore;
+
+      autoSaveData();
+      showToast("🔍 Plagiarism & AI Integrity Verification completed!");
+    }
+
+    function runAISimulator() {
+      const draftText = document.getElementById('compiled_draft_text').innerText;
+      if (draftText.includes('Start typing your sentences')) {
+        showToast("⚠️ Please enter a few sentences in Step 2 draft first!", "warning");
+        return;
+      }
+
+      document.getElementById('ai_chk1').checked = true;
+      document.getElementById('ai_chk2').checked = true;
+      document.getElementById('ai_chk3').checked = true;
+
+      document.getElementById('ai_sug1').value = "Use dialogue contractions (e.g., 'We can't both lead!') to make Sura and Baya's arguments feel realistic.";
+      document.getElementById('ai_sug2').value = "Add temporal conjunctions like 'Suddenly' in sentence 3 and 'Eventually' in sentence 6 for coherent transition.";
+      document.getElementById('ai_sug3').value = "Strengthen sentence 7 by explicitly highlighting mutual respect and responsibility.";
+
+      showToast("✨ AI Suggestions generated successfully!");
+      autoSaveData();
+    }
+
+    function evaluateWorksheet() {
+      // 1. Content (Isi) — Bobot 30%
+      let scoreContent = 0;
+      let levelContent = "";
+      const orientation = document.getElementById('plan_orientation').value.trim();
+      const complication = document.getElementById('plan_complication').value.trim();
+      const resolution = document.getElementById('plan_resolution').value.trim();
+      const value = document.getElementById('plan_value').value.trim();
+      const finalPara = document.getElementById('compiled_revised_text').innerText;
+      const wordCount = finalPara.split(/\s+/).filter(w => w.length > 0).length;
+
+      let planScore = 0;
+      if (orientation) planScore += 3;
+      if (complication) planScore += 3;
+      if (resolution) planScore += 3;
+      if (value) planScore += 3;
+
+      if (planScore >= 12 && wordCount >= 50) {
+        scoreContent = 29;
+        levelContent = "27–30 (Excellent)";
+      } else if (planScore >= 9 && wordCount >= 35) {
+        scoreContent = 25;
+        levelContent = "22–26 (Good)";
+      } else if (planScore >= 6 || wordCount >= 20) {
+        scoreContent = 20;
+        levelContent = "17–21 (Fair)";
+      } else {
+        scoreContent = 12;
+        levelContent = "0–16 (Inadequate)";
+      }
+
+      // 2. Organization (Organisasi) — Bobot 20%
+      let scoreOrg = 0;
+      let levelOrg = "";
+      const lowerPara = finalPara.toLowerCase();
+      const conjunctions = ['suddenly', 'after that', 'eventually', 'one day', 'finally', 'then', 'meanwhile', 'however', 'in the end', 'at last'];
+      let conjFound = 0;
+      conjunctions.forEach(c => {
+        if (lowerPara.includes(c)) conjFound++;
+      });
+
+      if (conjFound >= 2 && wordCount >= 40) {
+        scoreOrg = 19;
+        levelOrg = "18–20 (Excellent)";
+      } else if (conjFound >= 1) {
+        scoreOrg = 16;
+        levelOrg = "14–17 (Good)";
+      } else if (wordCount >= 20) {
+        scoreOrg = 12;
+        levelOrg = "10–13 (Fair)";
+      } else {
+        scoreOrg = 7;
+        levelOrg = "0–9 (Inadequate)";
+      }
+
+      // 3. Grammar / Language Use (Tata Bahasa) — Bobot 20%
+      let scoreGrammar = 0;
+      let levelGrammar = "";
+      const presentVerbs = ['is', 'are', 'am', 'go', 'goes', 'run', 'runs', 'fight', 'fights', 'argue', 'argues', 'want', 'wants', 'say', 'says'];
+      const words = lowerPara.match(/\b[a-z']+\b/g) || [];
+      let presentErr = 0;
+      words.forEach(w => {
+        if (presentVerbs.includes(w)) presentErr++;
+      });
+
+      if (presentErr === 0 && wordCount >= 30) {
+        scoreGrammar = 19;
+        levelGrammar = "18–20 (Excellent)";
+      } else if (presentErr <= 2) {
+        scoreGrammar = 16;
+        levelGrammar = "14–17 (Good)";
+      } else if (presentErr <= 4) {
+        scoreGrammar = 12;
+        levelGrammar = "10–13 (Fair)";
+      } else {
+        scoreGrammar = 7;
+        levelGrammar = "0–9 (Inadequate)";
+      }
+
+      // 4. Vocabulary (Kosakata / Diksi) — Bobot 15%
+      let scoreVocab = 0;
+      let levelVocab = "";
+      const uniqueWords = new Set(words).size;
+      const vocabRatio = words.length > 0 ? (uniqueWords / words.length) : 0;
+
+      if (vocabRatio >= 0.65 && wordCount >= 35) {
+        scoreVocab = 15;
+        levelVocab = "14–15 (Excellent)";
+      } else if (vocabRatio >= 0.50) {
+        scoreVocab = 12;
+        levelVocab = "11–13 (Good)";
+      } else if (vocabRatio >= 0.35) {
+        scoreVocab = 9;
+        levelVocab = "8–10 (Fair)";
+      } else {
+        scoreVocab = 5;
+        levelVocab = "0–7 (Inadequate)";
+      }
+
+      // 5. Mechanics (Mekanik) — Bobot 15%
+      let scoreMech = 0;
+      let levelMech = "";
+      const ack = document.getElementById('feedback_ack').value.trim();
+      const ref1 = document.getElementById('ref_q1').value.trim();
+      const ref2 = document.getElementById('ref_q2').value.trim();
+      const ref3 = document.getElementById('ref_q3').value.trim();
+
+      let mechBonus = 0;
+      if (ack) mechBonus += 3;
+      if (ref1) mechBonus += 4;
+      if (ref2) mechBonus += 4;
+      if (ref3) mechBonus += 4;
+
+      if (mechBonus >= 15) {
+        scoreMech = 15;
+        levelMech = "14–15 (Excellent)";
+      } else if (mechBonus >= 11) {
+        scoreMech = 12;
+        levelMech = "11–13 (Good)";
+      } else if (mechBonus >= 7) {
+        scoreMech = 9;
+        levelMech = "8–10 (Fair)";
+      } else {
+        scoreMech = 5;
+        levelMech = "0–7 (Inadequate)";
+      }
+
+      const total = scoreContent + scoreOrg + scoreGrammar + scoreVocab + scoreMech;
+
+      const integrityBox = document.getElementById('integrity_results');
+      const plagVal = integrityBox.dataset.plag ? parseInt(integrityBox.dataset.plag) : null;
+      const aiVal = integrityBox.dataset.ai ? parseInt(integrityBox.dataset.ai) : null;
+      const integrityPassed = (plagVal !== null && plagVal <= 20) && (aiVal !== null && aiVal <= 15);
+
+      document.getElementById('score_sec1').innerText = `${scoreContent} / 30`;
+      document.getElementById('level_sec1').innerText = levelContent;
+
+      document.getElementById('score_sec2').innerText = `${scoreOrg} / 20`;
+      document.getElementById('level_sec2').innerText = levelOrg;
+
+      document.getElementById('score_sec3').innerText = `${scoreGrammar} / 20`;
+      document.getElementById('level_sec3').innerText = levelGrammar;
+
+      document.getElementById('score_sec4').innerText = `${scoreVocab} / 15`;
+      document.getElementById('level_sec4').innerText = levelVocab;
+
+      document.getElementById('score_sec5').innerText = `${scoreMech} / 15`;
+      document.getElementById('level_sec5').innerText = levelMech;
+
+      document.getElementById('total_score').innerText = total;
+
+      const badge = document.getElementById('grade_badge');
+      const notice = document.getElementById('evaluation_notice');
+
+      if (total >= 78 && integrityPassed) {
+        badge.className = "inline-block text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 mt-1";
+        badge.innerText = `PASSED (Grade ${total >= 88 ? 'A' : 'B'}) — Ready for Submission!`;
+        
+        notice.className = "mt-4 text-xs p-3.5 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-900";
+        notice.innerHTML = `<strong>🎉 Congratulations!</strong> Total skor analitik Anda adalah <strong>${total}/100</strong> (Lulus Grade B), dan teks telah terverifikasi aman (Plakiat ≤20%, AI ≤15%). Anda dapat mendownload atau mencetak LKM ini untuk dikumpulkan!`;
+      } else if (total >= 78 && !integrityPassed) {
+        badge.className = "inline-block text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 mt-1";
+        badge.innerText = `INTEGRITY CHECK REQUIRED (Skor: ${total})`;
+
+        notice.className = "mt-4 text-xs p-3.5 rounded-lg bg-amber-50 border border-amber-300 text-amber-900";
+        notice.innerHTML = `<strong>⚠️ Hasil Integrity Check Belum Memenuhi Syarat.</strong><br>Skor penulisan Anda <strong>${total}/100</strong> sudah memenuhi target, namun Anda <strong>WAJIB</strong> menjalankan dan meloloskan <strong>Automated Plagiarism & AI Integrity Detector (Step 4B)</strong> dengan Plakiat ≤20% dan AI ≤15%.`;
+      } else {
+        badge.className = "inline-block text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 mt-1";
+        badge.innerText = `REVISION NEEDED (Skor: ${total} / Target Min 78)`;
+
+        notice.className = "mt-4 text-xs p-3.5 rounded-lg bg-amber-50 border border-amber-300 text-amber-900";
+        notice.innerHTML = `<strong>⚠️ Target Grade B (Min. 78) Belum Tercapai.</strong> Skor saat ini: <strong>${total}/100</strong>.<br>
+        <ul class="list-disc pl-4 mt-1 space-y-0.5">
+          ${scoreContent < 22 ? '<li><strong>Content (Isi):</strong> Lengkapi Story Plan Matrix (Step 2A) dan kembangkan plot cerita minimal 5–7 kalimat.</li>' : ''}
+          ${scoreOrg < 14 ? '<li><strong>Organization:</strong> Tambahkan kata transisi kronologis (Suddenly, After that, Eventually).</li>' : ''}
+          ${scoreGrammar < 14 ? '<li><strong>Grammar:</strong> Perbaiki kata kerja ke bentuk Simple Past Tense (was, were, argued, decided).</li>' : ''}
+          ${scoreVocab < 11 ? '<li><strong>Vocabulary:</strong> Perkaya variasi diksi dan pergunakan action verbs yang ekspresif.</li>' : ''}
+          ${scoreMech < 11 ? '<li><strong>Mechanics:</strong> Isi kalimat konfirmasi feedback, jalankan Integrity Check di Step 4B, dan jawab refleksi di Step 4C.</li>' : ''}
+        </ul>`;
+      }
+      autoSaveData();
+    }
+
+    function autoPopulateVisuals() {
+      const stdName = document.getElementById('std_name').value || 'Student Author';
+      const charVal = document.getElementById('plan_value').value || 'Mutual Respect';
+
+      document.getElementById('p1_caption').value = "One sunny morning at STKIP School...";
+      document.getElementById('p1_sura').value = "I've decided to run for President!";
+      document.getElementById('p1_baya').value = "Good luck! But I will win!";
+
+      document.getElementById('p2_caption').value = "During campaign week...";
+      document.getElementById('p2_sura').value = "My academic plan is best!";
+      document.getElementById('p2_baya').value = "My sports plan is stronger!";
+
+      document.getElementById('p3_caption').value = "Election day arrived...";
+      document.getElementById('p3_sura').value = "Why are the votes so close?";
+      document.getElementById('p3_baya').value = "Neither of us will back down!";
+
+      document.getElementById('p4_caption').value = "Tied votes! SPLASH!";
+      document.getElementById('p4_sura').value = "A tied vote? Now what?!";
+      document.getElementById('p4_baya').value = "We can't keep arguing forever!";
+
+      document.getElementById('p5_caption').value = "After thoughtful discussion...";
+      document.getElementById('p5_sura').value = "What if we share presidency?";
+      document.getElementById('p5_baya').value = "You handle academics, I handle events!";
+
+      document.getElementById('p6_caption').value = "Co-presidents for the win!";
+      document.getElementById('p6_sura').value = "Teamwork beats rivalry!";
+      document.getElementById('p6_baya').value = "We are better together!";
+
+      updateVisualCard();
+      showToast("✨ 6-Panel Sunday Comic Strip populated from Step 4 story!");
+    }
+
+    function updateVisualCard() {
+      const stdName = document.getElementById('std_name').value || 'Student Writer';
+      const charVal = document.getElementById('plan_value').value || 'Respect';
+
+      document.getElementById('card_student_author').innerText = `By ${stdName} • STKIP Al Hikmah Surabaya`;
+      document.getElementById('card_value_tag').innerText = `Moral Value: ${charVal}`;
+
+      for (let i = 1; i <= 6; i++) {
+        const cap = document.getElementById(`p${i}_caption`).value || `Panel ${i} caption...`;
+        const sura = document.getElementById(`p${i}_sura`).value || `Sura dialogue...`;
+        const baya = document.getElementById(`p${i}_baya`).value || `Baya dialogue...`;
+
+        const capElem = document.getElementById(`card_p${i}_cap_txt`);
+        const suraElem = document.getElementById(`card_p${i}_sura_txt`);
+        const bayaElem = document.getElementById(`card_p${i}_baya_txt`);
+
+        if (capElem) capElem.innerText = cap;
+        if (suraElem) suraElem.innerText = `"${sura}"`;
+        if (bayaElem) bayaElem.innerText = `"${baya}"`;
+      }
+    }
+
+    function updateVisualTheme() {
+      const theme = document.getElementById('visual_theme_select').value;
+      const card = document.getElementById('social_preview_card');
+      const panels = document.querySelectorAll('.comic-panel-box');
+      const floors = document.querySelectorAll('.comic-floor-box');
+      const captions = document.querySelectorAll('.comic-caption-box');
+      const title = document.getElementById('card_story_title');
+      const footer = document.getElementById('card_footer');
+
+      if (theme === 'classic_paper') {
+        card.style.backgroundColor = "#ffffff";
+        card.style.color = "#000000";
+        if (title) title.style.color = "#000000";
+        if (footer) footer.style.color = "#334155";
+        panels.forEach(p => { p.style.backgroundColor = "#9be2ff"; p.style.borderColor = "#000000"; });
+        floors.forEach(f => { f.style.backgroundColor = "#84ce43"; f.style.borderColor = "#000000"; });
+        captions.forEach(c => { c.style.backgroundColor = "#ffffff"; c.style.color = "#000000"; });
+      } else if (theme === 'warm_vintage') {
+        card.style.backgroundColor = "#f4ecd8";
+        card.style.color = "#271c19";
+        if (title) title.style.color = "#432818";
+        if (footer) footer.style.color = "#582f0e";
+        panels.forEach(p => { p.style.backgroundColor = "#e8dfcc"; p.style.borderColor = "#432818"; });
+        floors.forEach(f => { f.style.backgroundColor = "#b0a080"; f.style.borderColor = "#432818"; });
+        captions.forEach(c => { c.style.backgroundColor = "#fff9ea"; c.style.color = "#432818"; });
+      } else if (theme === 'pastel_pop') {
+        card.style.backgroundColor = "#fce7f3";
+        card.style.color = "#1e1b4b";
+        if (title) title.style.color = "#831843";
+        if (footer) footer.style.color = "#9d174d";
+        panels.forEach(p => { p.style.backgroundColor = "#e0f2fe"; p.style.borderColor = "#1e1b4b"; });
+        floors.forEach(f => { f.style.backgroundColor = "#a7f3d0"; f.style.borderColor = "#1e1b4b"; });
+        captions.forEach(c => { c.style.backgroundColor = "#ffffff"; c.style.color = "#1e1b4b"; });
+      } else if (theme === 'retro_noir') {
+        card.style.backgroundColor = "#f3f4f6";
+        card.style.color = "#000000";
+        if (title) title.style.color = "#000000";
+        if (footer) footer.style.color = "#4b5563";
+        panels.forEach(p => { p.style.backgroundColor = "#e5e7eb"; p.style.borderColor = "#000000"; });
+        floors.forEach(f => { f.style.backgroundColor = "#9ca3af"; f.style.borderColor = "#000000"; });
+        captions.forEach(c => { c.style.backgroundColor = "#ffffff"; c.style.color = "#000000"; });
+      } else if (theme === 'cyber_neon') {
+        card.style.backgroundColor = "#0f172a";
+        card.style.color = "#f8fafc";
+        if (title) title.style.color = "#38bdf8";
+        if (footer) footer.style.color = "#94a3b8";
+        panels.forEach(p => { p.style.backgroundColor = "#1e293b"; p.style.borderColor = "#38bdf8"; });
+        floors.forEach(f => { f.style.backgroundColor = "#059669"; f.style.borderColor = "#38bdf8"; });
+        captions.forEach(c => { c.style.backgroundColor = "#0284c7"; c.style.color = "#ffffff"; });
+      } else if (theme === 'kawaii_sunset') {
+        card.style.backgroundColor = "#fff7ed";
+        card.style.color = "#431407";
+        if (title) title.style.color = "#9a3412";
+        if (footer) footer.style.color = "#c2410c";
+        panels.forEach(p => { p.style.backgroundColor = "#fef3c7"; p.style.borderColor = "#7c2d12"; });
+        floors.forEach(f => { f.style.backgroundColor = "#fcd34d"; f.style.borderColor = "#7c2d12"; });
+        captions.forEach(c => { c.style.backgroundColor = "#ffedd5"; c.style.color = "#7c2d12"; });
+      } else if (theme === 'manga_mono') {
+        card.style.backgroundColor = "#ffffff";
+        card.style.color = "#000000";
+        if (title) title.style.color = "#000000";
+        if (footer) footer.style.color = "#111827";
+        panels.forEach(p => { p.style.backgroundColor = "#ffffff"; p.style.borderColor = "#000000"; });
+        floors.forEach(f => { f.style.backgroundColor = "#d1d5db"; f.style.borderColor = "#000000"; });
+        captions.forEach(c => { c.style.backgroundColor = "#000000"; c.style.color = "#ffffff"; });
+      }
+    }
+
+    function updateAspectRatio() {
+      const ratio = document.getElementById('aspect_ratio_select').value;
+      const card = document.getElementById('social_preview_card');
+      const grid = document.getElementById('comic_panels_grid');
+      const badge = document.getElementById('ratio_badge');
+
+      card.className = "bg-white p-5 rounded-lg border-4 border-black shadow-2xl relative overflow-hidden text-black transition-all mx-auto";
+      
+      if (ratio === 'story_9_16') {
+        card.classList.add('max-w-md');
+        grid.className = "grid grid-cols-1 gap-3 mb-4";
+        badge.innerText = "Format: 📱 IG Story / TikTok (9:16 Vertical Webtoon)";
+      } else if (ratio === 'feed_4_5') {
+        card.classList.add('max-w-lg');
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4";
+        badge.innerText = "Format: 📸 IG Feed Portrait (4:5 Ratio)";
+      } else if (ratio === 'square_1_1') {
+        card.classList.add('max-w-xl');
+        grid.className = "grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-4";
+        badge.innerText = "Format: 🟦 IG Post / FB Square (1:1 Ratio)";
+      } else if (ratio === 'classic_banner') {
+        card.classList.add('max-w-4xl');
+        grid.className = "grid grid-cols-1 md:grid-cols-2 gap-4 mb-4";
+        badge.innerText = "Format: 📰 Classic Newspaper Strip (Banner / 16:9)";
+      }
+    }
+
+    function downloadVisualCardPNG() {
+      const cardElem = document.getElementById('social_preview_card');
+      const stdName = document.getElementById('std_name').value || 'Student';
+      const ratio = document.getElementById('aspect_ratio_select').value;
+
+      showToast("⏳ Rendering high-resolution PNG image...");
+
+      html2canvas(cardElem, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null
+      }).then(canvas => {
+        const image = canvas.toDataURL("image/png");
+        const a = document.createElement('a');
+        a.href = image;
+        a.download = `Suro_Boyo_Comic_Strip_${ratio}_${stdName.replace(/\s+/g, '_')}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast("📸 High-Res Comic Graphic (.PNG) downloaded successfully!");
+      }).catch(err => {
+        console.error("Canvas export error:", err);
+        showToast("⚠️ Image export failed. Please try again.", "warning");
+      });
+    }
+
+    function copySocialCaption() {
+      const name = document.getElementById('std_name').value || 'A Student Writer';
+      const val = document.getElementById('plan_value').value || 'Mutual Respect';
+      const story = document.getElementById('compiled_revised_text').innerText;
+      const ratio = document.getElementById('aspect_ratio_select').value;
+
+      const captionText = `📖 Modern Sunday Comic Strip: Sura & Baya's Election Story!\n\n` +
+        `Written by: ${name} (STKIP Al Hikmah Surabaya)\n` +
+        `Moral Value: ${val}\n` +
+        `Format: ${ratio.toUpperCase()}\n\n` +
+        `"${story}"\n\n` +
+        `#ModernSuroAndBoyo #SundayComicStrip #BasicWrittenEnglish #STKIPAlHikmah #FolktaleAdaptation #StudentStorytelling #WebtoonIndo`;
+
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = captionText;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy');
+        showToast("📋 Social Media Caption & Hashtags copied!");
+      } catch (err) {
+        showToast("⚠️ Copy failed", "warning");
+      }
+      document.body.removeChild(tempTextArea);
+    }
+
+    function exportToWord() {
+      const name = document.getElementById('std_name').value || 'Student';
+      const id = document.getElementById('std_id').value || 'N/A';
+      const cls = document.getElementById('std_class').value || 'N/A';
+      const date = document.getElementById('std_date').value || 'N/A';
+
+      const orientation = document.getElementById('plan_orientation').value || '-';
+      const complication = document.getElementById('plan_complication').value || '-';
+      const resolution = document.getElementById('plan_resolution').value || '-';
+      const value = document.getElementById('plan_value').value || '-';
+
+      const initialPara = document.getElementById('compiled_draft_text').innerText;
+      const revisedPara = document.getElementById('compiled_revised_text').innerText;
+      const ack = document.getElementById('feedback_ack').value || '-';
+
+      const q1 = document.getElementById('ref_q1').value || '-';
+      const q2 = document.getElementById('ref_q2').value || '-';
+      const q3 = document.getElementById('ref_q3').value || '-';
+
+      const totalScore = document.getElementById('total_score').innerText;
+      const s1 = document.getElementById('score_sec1').innerText;
+      const s2 = document.getElementById('score_sec2').innerText;
+      const s3 = document.getElementById('score_sec3').innerText;
+      const s4 = document.getElementById('score_sec4').innerText;
+      const s5 = document.getElementById('score_sec5').innerText;
+
+      const htmlContent = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+          <title>Student Worksheet - ${name}</title>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.5; font-size: 11pt; color: #111; }
+            h1 { color: #800000; font-size: 16pt; margin-bottom: 2pt; }
+            h2 { color: #800000; font-size: 13pt; border-bottom: 1px solid #800000; padding-bottom: 3pt; margin-top: 15pt; }
+            table { width: 100%; border-collapse: collapse; margin-top: 10pt; }
+            td, th { border: 1px solid #ccc; padding: 6pt; font-size: 10pt; text-align: left; }
+            th { background-color: #f2f2f2; font-weight: bold; }
+            .box { background-color: #f9f9f9; border: 1px solid #ddd; padding: 8pt; margin-top: 5pt; font-style: italic; }
+          </style>
+        </head>
+        <body>
+          <h1>STKIP AL HIKMAH SURABAYA</h1>
+          <p><strong>Basic Written English (KK0211302) — LKM Modern Suro and Boyo Story Writing</strong></p>
+          
+          <table>
+            <tr><th>Student Name</th><td>${name}</td><th>Student ID</th><td>${id}</td></tr>
+            <tr><th>Class / Session</th><td>${cls}</td><th>Course Lecturer</th><td>Dr. Ahmad Syafi'i, M.Pd.</td></tr>
+            <tr><th>Date</th><td>${date}</td><th>Course Code</th><td>KK0211302 (Basic Written English)</td></tr>
+          </table>
+
+          <h2>Step 2 — Story Plan Matrix</h2>
+          <table>
+            <tr><th>Orientation</th><td>${orientation}</td></tr>
+            <tr><th>Complication</th><td>${complication}</td></tr>
+            <tr><th>Resolution</th><td>${resolution}</td></tr>
+            <tr><th>Character Value</th><td>${value}</td></tr>
+          </table>
+
+          <h2>Step 2 — Quick First Draft</h2>
+          <div class="box">${initialPara}</div>
+
+          <h2>Step 4 — Revised / Final Story</h2>
+          <div class="box" style="font-style:normal; font-weight:bold;">${revisedPara}</div>
+
+          <p><strong>Feedback Acknowledgement:</strong> ${ack}</p>
+
+          <h2>Step 4B — Integrity Verification</h2>
+          <p><strong>Plagiarism Similarity Index:</strong> ${document.getElementById('plagiarism_score_text').innerText} (Target ≤ 20%)</p>
+          <p><strong>AI Generated Content Score:</strong> ${document.getElementById('ai_score_text').innerText} (Target ≤ 15%)</p>
+
+          <h2>Step 4C — Reflections</h2>
+          <p><strong>1. Character Value:</strong> ${q1}</p>
+          <p><strong>2. Feedback Mode & Process:</strong> ${q2}</p>
+          <p><strong>3. Learning & Digital Integrity:</strong> ${q3}</p>
+
+          <h2>Step 5 — Analytic Scoring Summary (Rubrik 0–100)</h2>
+          <table>
+            <tr><th>1. Content (30%)</th><td>${s1}</td></tr>
+            <tr><th>2. Organization (20%)</th><td>${s2}</td></tr>
+            <tr><th>3. Grammar (20%)</th><td>${s3}</td></tr>
+            <tr><th>4. Vocabulary (15%)</th><td>${s4}</td></tr>
+            <tr><th>5. Mechanics (15%)</th><td>${s5}</td></tr>
+            <tr><th>Total Evaluated Score</th><td><strong>${totalScore} / 100 Points</strong></td></tr>
+          </table>
+
+          <div style="margin-top:30pt; padding-top:12pt; border-top:1px solid #ccc; text-align:center; font-size:9pt; color:#666; font-weight:bold;">
+            Developed by @ PAK SYAFF RESEARCH TEAM 2026
+          </div>
+          <p style="font-size:8pt; color:#666; text-align:center; margin-top:6pt;">
+            <strong>LEGAL DISCLAIMER & NOTICE:</strong> This instructional material and worksheet are strictly protected under copyright and intellectual property regulations. Do not use, copy, reproduce, distribute, or adapt any portion of this document without explicit formal written permission from Dr. Ahmad Syafi'i, M.Pd. and the PAK SYAFF RESEARCH TEAM.
+          </p>
+        </body>
+        </html>
+      `;
+
+      const blob = new Blob(['\ufeff', htmlContent], {
+        type: 'application/msword'
+      });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `LKM_Suro_Boyo_${name.replace(/\s+/g, '_')}.doc`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showToast("📄 Word document (.doc) downloaded!");
+    }
+
+    function copyToClipboard(elementId, successMsg) {
+      const text = document.getElementById(elementId).innerText;
+      if (!text || text.includes('Start typing') || text.includes('Fill in your revised')) {
+        showToast("⚠️ Nothing to copy yet!", "warning");
+        return;
+      }
+      
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = text;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try {
+        document.execCommand('copy');
+        showToast(`📋 ${successMsg}`);
+      } catch (err) {
+        showToast("⚠️ Copy failed", "warning");
+      }
+      document.body.removeChild(tempTextArea);
+    }
+
+    function autoSaveData() {
+      const data = {};
+      const inputs = document.querySelectorAll('input[type="text"], input[type="date"], textarea');
+      inputs.forEach(input => {
+        if (input.id) data[input.id] = input.value;
+      });
+
+      const selectedMode = document.querySelector('input[name="feedback_mode"]:checked');
+      if (selectedMode) data['feedback_mode'] = selectedMode.value;
+
+      ['ai_chk1', 'ai_chk2', 'ai_chk3'].forEach(id => {
+        const chk = document.getElementById(id);
+        if (chk) data[id] = chk.checked;
+      });
+
+      localStorage.setItem('suro_boyo_lkm_data', JSON.stringify(data));
+    }
+
+    function saveProgress() {
+      autoSaveData();
+      showToast("✅ Progress saved locally in browser!");
+    }
+
+    function loadSavedData() {
+      const saved = localStorage.getItem('suro_boyo_lkm_data');
+      if (!saved) return;
+      try {
+        const data = JSON.parse(saved);
+        Object.keys(data).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            if (el.type === 'checkbox') {
+              el.checked = data[id];
+            } else {
+              el.value = data[id];
+            }
+          }
+        });
+
+        if (data['feedback_mode']) {
+          const radio = document.querySelector(`input[name="feedback_mode"][value="${data['feedback_mode']}"]`);
+          if (radio) {
+            radio.checked = true;
+            switchFeedbackMode(data['feedback_mode']);
+          }
+        }
+      } catch (e) {
+        console.error("Error loading saved data", e);
+      }
+    }
+
+    function showToast(msg, type = "success") {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastMsg.innerText = msg;
+      toastIcon.innerText = type === "warning" ? "⚠️" : "✅";
+      
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
